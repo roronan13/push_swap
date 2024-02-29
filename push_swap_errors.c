@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_errors.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/02/29 17:23:09 by rpothier         ###   ########.fr       */
+/*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
+/*   Updated: 2024/02/29 17:24:54 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	check_errors(int argc, char **argv)
 {
-	check_errors(argc, argv);
-	return (0);
+	check_params(argc, argv);
 }
+
+void	check_params(int argc, char **argv)
+{
+	if (argc <= 1 && argv[1] == NULL)
+		exit(EXIT_FAILURE);
+	return ;
+}
+
