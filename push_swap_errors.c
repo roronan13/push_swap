@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/07 19:29:49 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/07 22:11:13 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void	check_params(int argc, char **argv)
 
 void	check_number(int argc, char **argv)
 {
-	
+	while ()
 }
