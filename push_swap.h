@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/02/29 17:21:55 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/07 19:30:18 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 
 void	check_errors(int argc, char **argv);
 void	check_params(int argc, char **argv);
+void	check_number(int argc, char **argv);
 
 #endif
