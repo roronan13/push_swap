@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/08 18:15:27 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/08 18:31:18 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,25 @@ long int	ft_atoi(char *argv)
 	return (resu);
 }
 
-int	*fill_int_table(argc, argv)
+int	*fill_int_table(int argc, char **argv, int *nbr_table)
 {
-	
+	int	i;
+
+	i = 0;
+	nbr_table = malloc(sizeof(int) * (argc - 1));
+	if (!nbr_table)
+	{
+		free(nbr_table);
+		nbr_table = NULL;
+		write(2, "Error\n", 6);
+		exit(EXIT_FAILURE);
+	}
+	*argv++;
+	while (*argv)
+	{
+		nbr_table[i] = ft_atoi(*argv);
+		i++;
+		*argv++;
+	}
+	return (nbr_table);
 }

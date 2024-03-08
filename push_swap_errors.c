@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/08 18:15:38 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/08 18:45:16 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	check_errors(int argc, char **argv)
 {
-	int	*nbr;
-	
 	check_params(argc, argv);
 	check_number(argc, argv);
 	check_long(argc, argv);
@@ -72,24 +70,24 @@ void	check_long(int argc, char **argv)
 
 void	check_twice(int argc, char **argv)
 {
-	int	*nbr;
+	int	*nbr_table;
 	int	i;
+	int	j;
 	
 	i = 0;
-	nbr = malloc(sizeof(int) * (argc - 1));
-	if (!nbr)
+	nbr_table = fill_int_table(argc, argv, nbr_table);
+	while(nbr_table[i])
 	{
-		free(nbr);
-		nbr = NULL;
-		write(2, "Error\n", 6);
-		exit(EXIT_FAILURE);
-	}
-	*argv++;
-	while (*argv)
-	{
-		nbr[i] = ft_atoi(*argv);
+		j = i + 1;
+		while (nbr_table[j])
+		{
+			if (nbr_table[i] == nbr_table[j])
+			{
+				write(2, "Error\n", 6);
+				exit(EXIT_FAILURE);
+			}
+			j++;
+		}
 		i++;
-		*argv++;
 	}
-	
 }
