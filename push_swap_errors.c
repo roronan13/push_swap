@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/08 17:02:46 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/08 17:37:24 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	check_errors(int argc, char **argv)
 	check_params(argc, argv);
 	check_number(argc, argv);
 	check_long(argc, argv);
+	check_twice(argc, argv);
 }
 
 void	check_params(int argc, char **argv)
@@ -52,9 +53,22 @@ void	check_number(int argc, char **argv)
 
 void	check_long(int argc, char **argv)
 {
-	argv++;
-	while (argv)
+	long int	nbr;
+	
+	*argv++;
+	while (*argv)
 	{
-		ft_atoi(argv);
+		nbr = ft_atoi(*argv);
+		if (nbr < -2147483648 || nbr > 2147483647)
+		{
+			write(2, "Error\n", 6);
+			exit(EXIT_FAILURE);
+		}
+		*argv++;
 	}
+}
+
+void	check_twice(int argc, char **argv)
+{
+	
 }
