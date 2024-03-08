@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/08 17:37:24 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/08 17:49:25 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	check_number(int argc, char **argv)
 void	check_long(int argc, char **argv)
 {
 	long int	nbr;
-	
+
 	*argv++;
 	while (*argv)
 	{
@@ -70,5 +70,24 @@ void	check_long(int argc, char **argv)
 
 void	check_twice(int argc, char **argv)
 {
+	int	*nbr;
+	int	i;
+	
+	i = 0;
+	nbr = malloc(sizeof(int) * (argc - 1));
+	if (!nbr)
+	{
+		free(nbr);
+		nbr = NULL;
+		write(2, "Error\n", 6);
+		exit(EXIT_FAILURE);
+	}
+	*argv++;
+	while (*argv)
+	{
+		nbr[i] = ft_atoi(*argv);
+		i++;
+		*argv++;
+	}
 	
 }
