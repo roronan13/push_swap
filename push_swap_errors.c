@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/08 16:48:05 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/08 17:02:46 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	check_errors(int argc, char **argv)
 {
 	check_params(argc, argv);
 	check_number(argc, argv);
+	check_long(argc, argv);
 }
 
 void	check_params(int argc, char **argv)
@@ -33,6 +34,8 @@ void	check_number(int argc, char **argv)
 	while (i < argc)
 	{
 		j = 0;
+		if (argv[i][j] == '-')
+			j++;
 		while (argv[i][j])
 		{
 			if (j >= 0 && j <= 9)
@@ -44,5 +47,14 @@ void	check_number(int argc, char **argv)
 			}
 		}
 		i++;
+	}
+}
+
+void	check_long(int argc, char **argv)
+{
+	argv++;
+	while (argv)
+	{
+		ft_atoi(argv);
 	}
 }

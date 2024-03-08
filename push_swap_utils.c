@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/08 17:04:36 by rpothier         ###   ########.fr       */
+/*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
+/*   Updated: 2024/03/08 17:18:01 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+int	ft_atoi(char *argv)
+{
+	int	i;
+	int	j;
+	int	resu;
 
-void	check_errors(int argc, char **argv);
-void	check_params(int argc, char **argv);
-void	check_number(int argc, char **argv);
-void	check_long(int argc, char **argv);
-int		ft_atoi(char *argv);
-
-#endif
+	i = 0;
+	j = 1;
+	if (argv[i] == '-')
+		i++;
+	while (argv[i] >= 0 && argv[i] <= 9)
+		i++;
+	while (argv[i - 1] >= 0 && argv[i - 1] <= 9 && i - 1 >= 0)
+	{
+		resu += (argv[i - 1] - 48) * j;
+		j *= 10;
+		i--;
+	}
+	if (argv[i - 1] = =)
+}
