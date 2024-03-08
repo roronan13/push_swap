@@ -6,17 +6,16 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/08 15:18:12 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/08 15:30:04 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_errors(int argc, char **argv)
+void	check_errors(int argc, char **argv)
 {
 	check_params(argc, argv);
-	if (!check_number(argc, argv))
-		return (0);
+	check_number(argc, argv);
 }
 
 void	check_params(int argc, char **argv)
@@ -25,7 +24,7 @@ void	check_params(int argc, char **argv)
 		exit(EXIT_SUCCESS);
 }
 
-int	check_number(int argc, char **argv)
+void	check_number(int argc, char **argv)
 {
 	int	i;
 	int	j;
@@ -40,7 +39,7 @@ int	check_number(int argc, char **argv)
 				j++;
 			else
 			{
-				write(1, "Error\n", 6);
+				write(2, "Error\n", 6);
 				return (0);
 			}
 		}
