@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/08 15:23:59 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/08 16:45:47 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	main(int argc, char **argv)
 {
-	if (!check_errors(argc, argv))
-		return (0);
+	check_errors(argc, argv);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/08 15:30:04 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/08 16:48:05 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,9 @@ void	check_number(int argc, char **argv)
 			else
 			{
 				write(2, "Error\n", 6);
-				return (0);
+				exit(EXIT_FAILURE);
 			}
 		}
 		i++;
 	}
-	return (1);
 }
