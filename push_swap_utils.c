@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/08 17:32:28 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/08 18:15:27 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,9 @@ long int	ft_atoi(char *argv)
 	if (argv[i - 1] == '-')
 		return (-resu);
 	return (resu);
+}
+
+int	*fill_int_table(argc, argv)
+{
+	
 }
