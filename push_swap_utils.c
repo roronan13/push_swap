@@ -6,27 +6,30 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/13 13:42:44 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/13 14:55:59 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long int	ft_atoi(char *argv)
+long long int	ft_atoi(char *argv)
 {
-	int			i;
-	int			j;
-	long int	resu;
+	int				i;
+	int				j;
+	long long int	resu;
 
 	i = 0;
 	j = 1;
 	resu = 0;
 	if (argv[i] == '-')
 		i++;
-	while (argv[i] >= 48 && argv[i] <= 57)
+	while (argv[i])
 		i++;
 	while (argv[i - 1] >= 48 && argv[i - 1] <= 57 && i - 1 >= 0)
 	{
+		/* if (resu + ((argv[i - 1] - 48) * j) > INT_MAX || 
+			resu + ((argv[i - 1] - 48) * j) < INT_MIN)
+			return (0); */
 		resu += (argv[i - 1] - 48) * j;
 		j *= 10;
 		i--;
