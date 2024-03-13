@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/13 16:57:37 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/13 18:14:13 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,16 @@ long long	ft_atoi(char *argv)
 		i++;
 	while (argv[i - 1] >= 48 && argv[i - 1] <= 57 && i - 1 >= 0)
 	{
-		if (j == 1000000000 && resu > 147483647)
-			return (0);
+		/* if ((j == 1000000000 && (argv[i - 1] - 48) >= 2) && resu > 147483647)
+		{
+			if 
+		} */
+		if (j * (argv[i - 1] - 48) > 1000000000)
+		{
+			if (((argv[i - 1] - 48) == 2 && resu > 147483648) ||
+				(argv[i - 1] - 48) > 2)
+				return (0);
+		}
 		/* if ((long long)((long long)resu + (long long)((argv[i - 1] - 48) * j)) > INT_MAX || 
 			resu + ((argv[i - 1] - 48) * j) < INT_MIN)
 			return (0); */
