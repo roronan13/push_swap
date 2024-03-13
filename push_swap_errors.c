@@ -6,17 +6,18 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/13 12:39:36 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/13 13:42:40 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 void	check_errors(int argc, char **argv)
 {
 	check_params(argc, argv);
 	check_number(argc, argv);
-	//check_long(argc, argv);
+	check_long(argc, argv);
 	//check_twice(argc, argv);
 }
 
@@ -43,7 +44,7 @@ void	check_number(int argc, char **argv)
 				j++;
 			else
 			{
-				write(2, "Error\n", 6);
+				write(2, "Error1\n", 7);
 				exit(EXIT_FAILURE);
 			}
 		}
@@ -54,17 +55,18 @@ void	check_number(int argc, char **argv)
 void	check_long(int argc, char **argv)
 {
 	long int	nbr;
+	int			i;
 
-	*argv++;
-	while (*argv)
+	i = 1;
+	while (i < argc)
 	{
-		nbr = ft_atoi(*argv);
+		nbr = ft_atoi(argv[i]);
 		if (nbr < -2147483648 || nbr > 2147483647)
 		{
-			write(2, "Error\n", 6);
+			write(2, "Error2\n", 7);
 			exit(EXIT_FAILURE);
 		}
-		*argv++;
+		i++;
 	}
 }
 
@@ -83,7 +85,7 @@ void	check_twice(int argc, char **argv)
 		{
 			if (nbr_table[i] == nbr_table[j])
 			{
-				write(2, "Error\n", 6);
+				write(2, "Error3\n", 7);
 				exit(EXIT_FAILURE);
 			}
 			j++;

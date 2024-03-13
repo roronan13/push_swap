@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/08 18:31:18 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/13 13:42:44 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@ long int	ft_atoi(char *argv)
 
 	i = 0;
 	j = 1;
+	resu = 0;
 	if (argv[i] == '-')
 		i++;
-	while (argv[i] >= 0 && argv[i] <= 9)
+	while (argv[i] >= 48 && argv[i] <= 57)
 		i++;
-	while (argv[i - 1] >= 0 && argv[i - 1] <= 9 && i - 1 >= 0)
+	while (argv[i - 1] >= 48 && argv[i - 1] <= 57 && i - 1 >= 0)
 	{
 		resu += (argv[i - 1] - 48) * j;
 		j *= 10;
