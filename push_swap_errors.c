@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/13 22:59:24 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/13 23:23:23 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	check_errors(int argc, char **argv)
 	check_params(argc, argv);
 	check_number(argc, argv);
 	check_long(argc, argv);
-	//check_twice(argc, argv);
+	check_twice(argc, argv);
 }
 
 void	check_params(int argc, char **argv)
@@ -44,7 +44,7 @@ void	check_number(int argc, char **argv)
 				j++;
 			else
 			{
-				write(2, "Error1\n", 7);
+				write(2, "Error\n", 6);
 				exit(EXIT_FAILURE);
 			}
 		}
@@ -54,19 +54,20 @@ void	check_number(int argc, char **argv)
 
 void	check_long(int argc, char **argv)
 {
-	long long	nbr;
+	//long long	nbr;
 	int				i;
 
 	i = 1;
 	while (i < argc)
 	{
-		nbr = ft_atoi(argv[i]);
-		printf("retour : %lld\n", nbr);
-		if (nbr < -2147483648 || nbr > 2147483647)
+		//nbr = ft_atoi(argv[i]);
+		ft_atoi(argv[i]);
+		//printf("retour : %lld\n", nbr);
+		/* if (nbr < -2147483648 || nbr > 2147483647)
 		{
-			write(2, "Error25555\n", 7);
+			write(2, "Error\n", 6);
 			exit(EXIT_FAILURE);
-		}
+		} */
 		i++;
 	}
 }
@@ -86,7 +87,7 @@ void	check_twice(int argc, char **argv)
 		{
 			if (nbr_table[i] == nbr_table[j])
 			{
-				write(2, "Error3\n", 7);
+				write(2, "Error3\n", 6);
 				exit(EXIT_FAILURE);
 			}
 			j++;

@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/13 23:05:47 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/13 23:09:47 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ long long	ft_atoi(char *argv)
 	{
 		if (j > 1000000000)
 		{
-			write(2, "Error2\n", 7);
+			write(2, "Error\n", 6);
 			exit(EXIT_FAILURE);
 		}
 		if (j == 1000000000)
@@ -48,14 +48,14 @@ void	check_overflow(char *argv, int i, long long resu)
 		if (((argv[i - 1] - 48) == 2 && resu > 147483648) ||
 			(argv[i - 1] - 48) > 2)
 		{
-			write(2, "Error2\n", 7);
+			write(2, "Error\n", 6);
 			exit(EXIT_FAILURE);
 		}
 	}
 	else if (((argv[i - 1] - 48) == 2 && resu > 147483647)
 		|| argv[i - 1] - 48 > 2)
 	{
-		write(2, "Error2\n", 7);
+		write(2, "Error\n", 6);
 		exit(EXIT_FAILURE);
 	}
 }
