@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/08 19:02:22 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/13 12:39:36 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	check_number(int argc, char **argv)
 			j++;
 		while (argv[i][j])
 		{
-			if (j >= 0 && j <= 9)
+			if (argv[i][j] >= 48 && argv[i][j] <= 57)
 				j++;
 			else
 			{
