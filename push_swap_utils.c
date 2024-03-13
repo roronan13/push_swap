@@ -6,17 +6,18 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/13 15:03:02 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/13 16:57:37 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
-long long int	ft_atoi(char *argv)
+long long	ft_atoi(char *argv)
 {
 	int				i;
 	int				j;
-	long long int	resu;
+	long long		resu;
 
 	i = 0;
 	j = 1;
@@ -27,12 +28,19 @@ long long int	ft_atoi(char *argv)
 		i++;
 	while (argv[i - 1] >= 48 && argv[i - 1] <= 57 && i - 1 >= 0)
 	{
-		if (resu + ((argv[i - 1] - 48) * j) > INT_MAX || 
-			resu + ((argv[i - 1] - 48) * j) < INT_MIN)
+		if (j == 1000000000 && resu > 147483647)
 			return (0);
+		/* if ((long long)((long long)resu + (long long)((argv[i - 1] - 48) * j)) > INT_MAX || 
+			resu + ((argv[i - 1] - 48) * j) < INT_MIN)
+			return (0); */
+		/* if ((long long)((argv[i - 1] - 48) * j) > INT_MAX - resu)
+			return (0); */
 		resu += (argv[i - 1] - 48) * j;
+		/* if ((long long)resu > INT_MAX)
+			return (0); */
 		j *= 10;
 		i--;
+		printf("%lld\n", resu);
 	}
 	if (argv[i - 1] == '-')
 		return (-resu);

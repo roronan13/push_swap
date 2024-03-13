@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/13 14:57:50 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/13 16:24:08 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,14 @@ void	check_number(int argc, char **argv)
 
 void	check_long(int argc, char **argv)
 {
-	long long int	nbr;
+	long long	nbr;
 	int				i;
 
 	i = 1;
 	while (i < argc)
 	{
 		nbr = ft_atoi(argv[i]);
-		printf("%lld\n", nbr);
+		printf("retour : %lld\n", nbr);
 		if (nbr < -2147483648 || nbr > 2147483647)
 		{
 			write(2, "Error2\n", 7);
