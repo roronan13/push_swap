@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/13 21:17:04 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/13 21:42:37 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ long long	ft_atoi(char *argv)
 	i = 0;
 	j = 1;
 	resu = 0;
-	if (argv[i] == '-')
-		i++;
+	/* if (argv[i] == '-')
+		i++; */
 	while (argv[i])
 		i++;
 	while (argv[i - 1] >= 48 && argv[i - 1] <= 57 && i - 1 >= 0)
@@ -79,6 +79,11 @@ void	check_overflow(char *argv, int i, long long j, long long resu)
 		exit(EXIT_FAILURE);
 	}
 }
+
+/* int	check_overflow_two(char *argv)
+{
+	
+} */
 
 int	*fill_int_table(int argc, char **argv, int *nbr_table)
 {
