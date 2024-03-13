@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/13 16:24:08 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/13 22:59:24 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	check_long(int argc, char **argv)
 		printf("retour : %lld\n", nbr);
 		if (nbr < -2147483648 || nbr > 2147483647)
 		{
-			write(2, "Error2\n", 7);
+			write(2, "Error25555\n", 7);
 			exit(EXIT_FAILURE);
 		}
 		i++;
