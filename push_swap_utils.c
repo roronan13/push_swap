@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/13 19:56:31 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/13 21:17:04 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 long long	ft_atoi(char *argv)
 {
 	int				i;
-	int				j;
+	long long		j;
 	long long		resu;
 
 	i = 0;
@@ -26,17 +26,23 @@ long long	ft_atoi(char *argv)
 		i++;
 	while (argv[i])
 		i++;
-	while (argv[i - 1] >= 48 && argv[i - 1] <= 57 && i - 1 >= 0 && j <= 1000000000)
+	while (argv[i - 1] >= 48 && argv[i - 1] <= 57 && i - 1 >= 0)
 	{
 		/* if ((j == 1000000000 && (argv[i - 1] - 48) >= 2) && resu > 147483647)
 		{
 			if 
 		} */
+		if (j > 1000000000)
+		{
+			write(2, "Error2\n", 7);
+			exit(EXIT_FAILURE);
+		}
 		if (j == 1000000000)
 		{
-			if (((argv[i - 1] - 48) == 2 && resu > 147483647) ||
+			check_overflow(argv, i, j, resu);
+			/* if (((argv[i - 1] - 48) == 2 && resu > 147483647) ||
 				(argv[i - 1] - 48) > 2)
-				return (0);
+				return (0); */
 		}
 		/* if ((long long)((long long)resu + (long long)((argv[i - 1] - 48) * j)) > INT_MAX || 
 			resu + ((argv[i - 1] - 48) * j) < INT_MIN)
@@ -53,6 +59,25 @@ long long	ft_atoi(char *argv)
 	if (argv[i - 1] == '-')
 		return (-resu);
 	return (resu);
+}
+
+void	check_overflow(char *argv, int i, long long j, long long resu)
+{
+	if (argv[0] == '-')
+	{
+		if (((argv[i - 1] - 48) == 2 && resu > 147483648) ||
+			(argv[i - 1] - 48) > 2)
+		{
+			write(2, "Error2\n", 7);
+			exit(EXIT_FAILURE);
+		}
+	}
+	else if (((argv[i - 1] - 48) == 2 && resu > 147483647)
+		|| argv[i - 1] - 48 > 2)
+	{
+		write(2, "Error2\n", 7);
+		exit(EXIT_FAILURE);
+	}
 }
 
 int	*fill_int_table(int argc, char **argv, int *nbr_table)
