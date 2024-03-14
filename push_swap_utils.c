@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/14 22:30:31 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/14 22:51:01 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ int	*fill_int_table(int argc, char **argv, int *nbr_table)
 	//while (*argv)
 	while (argc - j)
 	{
+		printf("argv : %s\n", argv[j]);
+		printf("nbr_table : %d\n", nbr_table[i]);
 		nbr_table[i] = ft_atoi(argv[j]);
 		//printf("%s\n", *argv);
 		printf("argv : %s\n", argv[j]);
