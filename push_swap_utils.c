@@ -6,11 +6,12 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/14 17:53:53 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/14 18:14:01 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 int	ft_atoi(char *argv)
 {
@@ -77,6 +78,7 @@ int	*fill_int_table(int argc, char **argv, int *nbr_table)
 	while (*argv)
 	{
 		nbr_table[i] = ft_atoi(*argv);
+		printf("%d\n", nbr_table[i]);
 		i++;
 		*argv++;
 	}
