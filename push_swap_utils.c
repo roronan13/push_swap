@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/14 22:51:01 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/15 00:13:51 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,12 @@ int	*fill_int_table(int argc, char **argv, int *nbr_table)
 		i++;
 		//*argv++;
 		j++;
+	}
+	i = 0;
+	while (nbr_table)
+	{
+		printf("%d\n", nbr_table[i]);
+		i++;
 	}
 	/* i = 0;
 	while (nbr_table[i])
