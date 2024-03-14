@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/13 23:23:23 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/14 17:46:47 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	check_number(int argc, char **argv)
 				j++;
 			else
 			{
-				write(2, "Error\n", 6);
+				write(2, "Error 1\n", 8);
 				exit(EXIT_FAILURE);
 			}
 		}
@@ -55,7 +55,7 @@ void	check_number(int argc, char **argv)
 void	check_long(int argc, char **argv)
 {
 	//long long	nbr;
-	int				i;
+	int	i;
 
 	i = 1;
 	while (i < argc)
@@ -87,7 +87,7 @@ void	check_twice(int argc, char **argv)
 		{
 			if (nbr_table[i] == nbr_table[j])
 			{
-				write(2, "Error3\n", 6);
+				write(2, "Error 3\n", 8);
 				exit(EXIT_FAILURE);
 			}
 			j++;
