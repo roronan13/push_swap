@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/15 00:13:51 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/15 00:24:16 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	*fill_int_table(int argc, char **argv, int *nbr_table)
 
 	i = 0;
 	j = 1;
-	//printf("%d\n", argc);
+	printf("%d\n", argc);
 	nbr_table = malloc(sizeof(int) * (argc - 1));
 	if (!nbr_table)
 	{
@@ -91,12 +91,12 @@ int	*fill_int_table(int argc, char **argv, int *nbr_table)
 		//*argv++;
 		j++;
 	}
-	i = 0;
-	while (nbr_table)
+	/* i = 0;
+	while (nbr_table[i])
 	{
 		printf("%d\n", nbr_table[i]);
 		i++;
-	}
+	} */
 	/* i = 0;
 	while (nbr_table[i])
 	{
