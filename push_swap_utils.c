@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/15 01:47:07 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/15 02:14:11 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	*fill_int_table(int argc, char **argv, int *nbr_table)
 	i = 0;
 	j = 1;
 	//printf("%d\n", argc);
-	nbr_table = malloc(sizeof(int) * (3));
+	nbr_table = malloc(sizeof(int) * (argc - 1));
 	if (!nbr_table)
 	{
 		free(nbr_table);
@@ -80,7 +80,7 @@ int	*fill_int_table(int argc, char **argv, int *nbr_table)
 	}
 	size_t taille;
 	taille = sizeof(int) * (argc - 1);
-	printf("taille tableau 2 : %ld\n", taille);
+	//printf("taille tableau 2 : %ld\n", taille);
 	//*argv++;
 	//while (*argv)
 	while (argc - j)
@@ -107,7 +107,7 @@ int	*fill_int_table(int argc, char **argv, int *nbr_table)
 		printf("%d\n", nbr_table[i]);
 		i++;
 	} */
-	i = 0;
+	/* i = 0;
 	printf("%d\n", nbr_table[i]);
 	printf("%d\n", nbr_table[i + 1]);
 	printf("%d\n", nbr_table[i + 2]);
@@ -116,7 +116,7 @@ int	*fill_int_table(int argc, char **argv, int *nbr_table)
 	printf("%d\n", nbr_table[i + 5]);
 	printf("%d\n", nbr_table[i + 6]);
 	printf("%d\n", nbr_table[i + 7]);
-	printf("%d\n", nbr_table[i + 8]);
+	printf("%d\n", nbr_table[i + 8]); */
 	/* printf("argv : %s\n", argv[j+ 1]);
 	printf("nbr_table : %d\n", nbr_table[i + 1]);
 	printf("argv : %s\n", argv[j+ 2]);
