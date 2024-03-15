@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/15 00:24:16 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/15 01:47:07 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,12 @@ int	*fill_int_table(int argc, char **argv, int *nbr_table)
 {
 	int	i;
 	int	j;
+	int	tableau[4];
 
 	i = 0;
 	j = 1;
-	printf("%d\n", argc);
-	nbr_table = malloc(sizeof(int) * (argc - 1));
+	//printf("%d\n", argc);
+	nbr_table = malloc(sizeof(int) * (3));
 	if (!nbr_table)
 	{
 		free(nbr_table);
@@ -77,16 +78,19 @@ int	*fill_int_table(int argc, char **argv, int *nbr_table)
 		write(2, "Error 3\n", 8);
 		exit(EXIT_FAILURE);
 	}
+	size_t taille;
+	taille = sizeof(int) * (argc - 1);
+	printf("taille tableau 2 : %ld\n", taille);
 	//*argv++;
 	//while (*argv)
 	while (argc - j)
 	{
-		printf("argv : %s\n", argv[j]);
-		printf("nbr_table : %d\n", nbr_table[i]);
+		/* printf("argv : %s\n", argv[j]);
+		printf("nbr_table : %d\n", nbr_table[i]); */
 		nbr_table[i] = ft_atoi(argv[j]);
 		//printf("%s\n", *argv);
-		printf("argv : %s\n", argv[j]);
-		printf("nbr_table : %d\n", nbr_table[i]);
+		/* printf("argv : %s\n", argv[j]);
+		printf("nbr_table : %d\n", nbr_table[i]); */
 		i++;
 		//*argv++;
 		j++;
@@ -103,11 +107,16 @@ int	*fill_int_table(int argc, char **argv, int *nbr_table)
 		printf("%d\n", nbr_table[i]);
 		i++;
 	} */
-	/* printf("%d\n", nbr_table[i + 1]);
+	i = 0;
+	printf("%d\n", nbr_table[i]);
+	printf("%d\n", nbr_table[i + 1]);
 	printf("%d\n", nbr_table[i + 2]);
 	printf("%d\n", nbr_table[i + 3]);
 	printf("%d\n", nbr_table[i + 4]);
-	printf("%d\n", nbr_table[i + 5]); */
+	printf("%d\n", nbr_table[i + 5]);
+	printf("%d\n", nbr_table[i + 6]);
+	printf("%d\n", nbr_table[i + 7]);
+	printf("%d\n", nbr_table[i + 8]);
 	/* printf("argv : %s\n", argv[j+ 1]);
 	printf("nbr_table : %d\n", nbr_table[i + 1]);
 	printf("argv : %s\n", argv[j+ 2]);
