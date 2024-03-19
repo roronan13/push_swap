@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/15 16:06:08 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:24:13 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,13 +79,14 @@ void	check_twice(int argc, char **argv)
 	int	j;
 
 	i = 0;
-	nbr_table = fill_int_table(argc, argv, nbr_table);
-	while (nbr_table[i] >= INT_MIN && i <= (argc - 3))
+	nbr_table = fill_int_table(argc, argv);
+	while (i <= (argc - 3))
 	{
 		printf("%d\n", nbr_table[i]);
 		j = i + 1;
-		while (nbr_table[j])
+		while (j <= (argc - 2))
 		{
+			//printf("%d\n", nbr_table[j]);
 			if (nbr_table[i] == nbr_table[j])
 			{
 				write(2, "Error 3\n", 8);
