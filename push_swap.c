@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/19 22:18:34 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/19 23:27:24 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 int	main(int argc, char **argv)
 {
+	t_list_element	*nbr_list;
+	
 	check_errors(argc, argv);
-	create_list(argc, argv);
+	nbr_list = malloc(sizeof(t_list_element));
+	nbr_list = create_list(argc, argv);
 	return (0);
 }
 
-list_element	create_list(int argc, char **argv)
+t_list_element	*create_list(int argc, char **argv)
 {
 	
 }
