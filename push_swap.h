@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/19 18:15:10 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/19 19:33:24 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+
+typedef struct list
+{
+	int			nbr;
+	struct list	*next;
+	struct list	*previous;
+} list;
+
 
 void	check_errors(int argc, char **argv);
 void	check_params(int argc, char **argv);
