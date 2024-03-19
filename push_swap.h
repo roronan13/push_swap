@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/19 19:33:24 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/19 19:58:32 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ typedef struct list
 	int			nbr;
 	struct list	*next;
 	struct list	*previous;
-} list;
-
+} list_element;
 
 void	check_errors(int argc, char **argv);
 void	check_params(int argc, char **argv);
