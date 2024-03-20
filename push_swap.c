@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/21 00:29:25 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/21 00:35:59 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	allo(t_list_element *head)
 	while (j != i)
 	{
 		printf("%d\n", temp->content);
-		temp = temp->next;
+		temp = temp->previous;
 		j = temp->content;
 	}
 }
