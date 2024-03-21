@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:43:27 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/21 19:14:49 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/21 20:12:54 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ void	swap_a(t_list_element *head)
 	int	temp_int;
 	t_list_element	*temp_ptr;
 	
+	if (head->next == head || !head)
+		return ;
 	temp_ptr = head;
 	temp_ptr = temp_ptr->next;
 	temp_int = temp_ptr->content;
 	temp_ptr->content = head->content;
 	head->content = temp_int;
+	write(1, "sa\n", 3);
 }

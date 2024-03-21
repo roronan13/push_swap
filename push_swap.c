@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/21 19:12:55 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/21 19:50:42 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ t_list_element	*create_list(int argc, char **argv)
 		if (!new_element->next)
 			return (NULL);
 		previous_element = new_element;
+		// question below
 		new_element = new_element->next;
 		new_element->content = ft_atoi(*argv);
 		new_element->next = NULL;
