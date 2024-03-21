@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/20 19:14:53 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/21 19:12:30 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ void			check_overflow(char *argv, int i, int resu);
 int				*fill_int_table(int argc, char **argv);
 t_list_element	*create_list(int argc, char **argv);
 void	allo(t_list_element *head);
+void	swap_a(t_list_element *head);
 
 #endif
