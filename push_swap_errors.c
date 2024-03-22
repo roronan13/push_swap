@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/20 15:11:47 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/22 19:07:36 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,4 +96,8 @@ void	check_twice(int argc, char **argv)
 		}
 		i++;
 	}
+	printf("taille int : %ld\n", sizeof(int));
+	printf("alllooo : %ld\n", sizeof(nbr_table));
+	printf("alllooo pointeur int: %ld\n", sizeof(*nbr_table));
+	//free(nbr_table);
 }

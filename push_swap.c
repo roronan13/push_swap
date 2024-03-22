@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/21 19:50:42 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/22 19:02:44 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	main(int argc, char **argv)
 
 	check_errors(argc, argv);
 	nbr_list = create_list(argc, argv);
-	allo(nbr_list);
-	swap_a(nbr_list);
+	//allo(nbr_list);
+	//swap_a(nbr_list);
 	allo(nbr_list);
 	return (0);
 }
@@ -32,6 +32,7 @@ t_list_element	*create_list(int argc, char **argv)
 	t_list_element	*previous_element;
 	
 	head = malloc(sizeof(t_list_element));
+	printf("taille: %ld\n",sizeof(t_list_element));
 	if (!head)
 		return (NULL);
 	*argv++;
@@ -40,10 +41,12 @@ t_list_element	*create_list(int argc, char **argv)
 	head->next = NULL;
 	head->previous = NULL;
 	new_element = head;
+	//printf("coucou\n%p", head);
 	*argv++;
 	while (*argv && argc)
 	{
 		new_element->next = malloc(sizeof(t_list_element));
+		printf("taille: %ld\n",sizeof(t_list_element));
 		if (!new_element->next)
 			return (NULL);
 		previous_element = new_element;
