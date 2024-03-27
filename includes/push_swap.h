@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/27 15:57:46 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/27 23:24:24 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdio.h>
 
 typedef struct list
 {

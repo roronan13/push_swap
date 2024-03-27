@@ -6,12 +6,11 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/27 15:27:53 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/27 23:26:34 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "../includes/push_swap.h"
 
 void	check_errors(int argc, char **argv)
 {

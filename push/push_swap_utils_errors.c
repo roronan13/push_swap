@@ -6,12 +6,11 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/27 14:52:16 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/27 23:26:40 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "../includes/push_swap.h"
 
 int	ft_atoi(char *argv)
 {

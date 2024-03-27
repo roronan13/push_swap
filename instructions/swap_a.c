@@ -6,11 +6,11 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:43:27 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/27 15:39:18 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/27 23:26:45 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 void	swap_a(t_list_element *head)
 {

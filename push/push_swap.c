@@ -6,12 +6,11 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/27 17:42:07 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/27 23:48:13 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "../includes/push_swap.h"
 
 int	main(int argc, char **argv)
 {
@@ -33,20 +32,20 @@ t_list_element	*create_list(int argc, char **argv)
 	t_list_element	*head;
 	t_list_element	*new_element;
 	t_list_element	*previous_element;
-	
+	int				i;
+
 	head = malloc(sizeof(t_list_element));
 	//printf("taille: %ld\n",sizeof(t_list_element));
 	if (!head)
 		return (NULL);
-	*argv++;
 	//printf("%s\n", *argv);
-	head->content = ft_atoi(*argv);
+	i = 1;
+	head->content = ft_atoi(argv[i]);
 	head->next = NULL;
 	head->previous = NULL;
 	new_element = head;
 	//printf("coucou\n%p", head);
-	*argv++;
-	while (*argv && argc)
+	while (argc > ++i)
 	{
 		new_element->next = malloc(sizeof(t_list_element));
 		//printf("taille: %ld\n",sizeof(t_list_element));
@@ -55,10 +54,9 @@ t_list_element	*create_list(int argc, char **argv)
 		previous_element = new_element;
 		// question below
 		new_element = new_element->next;
-		new_element->content = ft_atoi(*argv);
+		new_element->content = ft_atoi(argv[i]);
 		new_element->next = NULL;
 		new_element->previous = previous_element;
-		*argv++;
 	}
 	new_element->next = head;
 	head->previous = new_element;
