@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/27 16:05:17 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/27 16:44:13 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,19 +72,15 @@ t_list_element	*create_list(int argc, char **argv)
 void	clean(t_list_element *head)
 {
 	t_list_element	*temp;
-	int	a;
-	int	temp_a;
 
-	a = head->content;
-	temp_a = a + 1;
-	while(a != temp_a)
+	temp = head->next;
+	while(temp)
 	{
-		temp = head->next;
 		free(head);
-		head = NULL;
 		head = temp;
-		temp_a = temp->content;
+		temp = temp->next;
 	}
+	
 }
 
 void	allo(t_list_element *head)
