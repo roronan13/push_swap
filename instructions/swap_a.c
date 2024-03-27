@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:43:27 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/21 20:12:54 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/27 15:39:18 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ void	swap_a(t_list_element *head)
 	temp_int = temp_ptr->content;
 	temp_ptr->content = head->content;
 	head->content = temp_int;
+	//free(temp_ptr);
+	//temp_ptr = NULL;
 	write(1, "sa\n", 3);
 }

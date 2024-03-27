@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/27 14:53:29 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/27 16:05:17 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ int	main(int argc, char **argv)
 	//allo(nbr_list);
 	swap_a(nbr_list);
 	allo(nbr_list);
+	clean(nbr_list);
+	//free(nbr_list);
+	//nbr_list = NULL;
 	return (0);
 }
 
@@ -59,7 +62,29 @@ t_list_element	*create_list(int argc, char **argv)
 	}
 	new_element->next = head;
 	head->previous = new_element;
+	//free(new_element);
+	//new_element = NULL;
+	//free(previous_element);
+	//previous_element = NULL;
 	return (head);
+}
+
+void	clean(t_list_element *head)
+{
+	t_list_element	*temp;
+	int	a;
+	int	temp_a;
+
+	a = head->content;
+	temp_a = a + 1;
+	while(a != temp_a)
+	{
+		temp = head->next;
+		free(head);
+		head = NULL;
+		head = temp;
+		temp_a = temp->content;
+	}
 }
 
 void	allo(t_list_element *head)
@@ -77,4 +102,6 @@ void	allo(t_list_element *head)
 		temp = temp->next;
 		j = temp->content;
 	}
+	//free(temp);
+	//temp = NULL;
 }
