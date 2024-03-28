@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/27 23:26:34 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/28 21:48:38 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,20 +53,12 @@ void	check_number(int argc, char **argv)
 
 void	check_long(int argc, char **argv)
 {
-	//long long	nbr;
 	int	i;
 
 	i = 1;
 	while (i < argc)
 	{
-		//nbr = ft_atoi(argv[i]);
 		ft_atoi(argv[i]);
-		//printf("retour : %lld\n", nbr);
-		/* if (nbr < -2147483648 || nbr > 2147483647)
-		{
-			write(2, "Error\n", 6);
-			exit(EXIT_FAILURE);
-		} */
 		i++;
 	}
 }
@@ -81,11 +73,9 @@ void	check_twice(int argc, char **argv)
 	nbr_table = fill_int_table(argc, argv);
 	while (i <= (argc - 3))
 	{
-		//printf("%d\n", nbr_table[i]);
 		j = i + 1;
 		while (j <= (argc - 2))
 		{
-			//printf("%d\n", nbr_table[j]);
 			if (nbr_table[i] == nbr_table[j])
 			{
 				write(2, "Error 3\n", 8);
@@ -95,9 +85,6 @@ void	check_twice(int argc, char **argv)
 		}
 		i++;
 	}
-	//printf("taille int : %ld\n", sizeof(int));
-	//printf("alllooo : %ld\n", sizeof(nbr_table));
-	//printf("alllooo pointeur int: %ld\n", sizeof(*nbr_table));
 	free(nbr_table);
 	nbr_table = NULL;
 }

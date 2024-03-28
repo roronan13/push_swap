@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/28 19:08:13 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/28 22:02:06 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,15 @@ t_list_element	*create_list(int argc, char **argv)
 	t_list_element	*previous_element;
 	int				i;
 
-	/*head = malloc(sizeof(t_list_element));
-	if (!head)
-		return (NULL);*/
-	make_malloc(head = malloc(sizeof(t_list_element)));
 	i = 1;
+	make_malloc(head = malloc(sizeof(t_list_element)));
 	head->content = ft_atoi(argv[i]);
 	head->next = NULL;
 	head->previous = NULL;
 	new_element = head;
 	while (argc > ++i)
 	{
-		new_element->next = malloc(sizeof(t_list_element));
-		if (!new_element->next)
-			return (NULL);
+		make_malloc(new_element->next = malloc(sizeof(t_list_element)));
 		previous_element = new_element;
 		new_element = new_element->next;
 		new_element->content = ft_atoi(argv[i]);
@@ -77,9 +72,9 @@ void	clean(t_list_element *head)
 
 void	allo(t_list_element *head)
 {
-	t_list_element *temp;
-	int	i;
-	int	j;
+	t_list_element	*temp;
+	int				i;
+	int				j;
 
 	temp = head;
 	i = temp->content;

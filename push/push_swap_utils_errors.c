@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/27 23:26:40 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/28 21:44:34 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ int	*fill_int_table(int argc, char **argv)
 	i = 0;
 	j = 1;
 	nbr_table = malloc(sizeof(int) * (argc - 1));
-	//printf("nbr table : %ld\n", sizeof(*nbr_table));
 	if (!nbr_table)
 	{
 		free(nbr_table);
