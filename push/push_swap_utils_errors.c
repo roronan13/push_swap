@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/28 21:44:34 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/03/28 22:48:39 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void	check_overflow(char *argv, int i, int resu)
 {
 	if (argv[0] == '-')
 	{
-		if (((argv[i - 1] - 48) == 2 && resu > 147483648) ||
-			(argv[i - 1] - 48) > 2)
+		if (((argv[i - 1] - 48) == 2 && resu > 147483648)
+			|| (argv[i - 1] - 48) > 2)
 		{
 			write(2, "Error 2\n", 8);
 			exit(EXIT_FAILURE);
