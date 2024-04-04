@@ -3,7 +3,8 @@ NAME_P = push_swap
 _SRCS_P = push_swap.c \
 			push_swap_errors.c\
 			push_swap_utils_errors.c 
-_SRCS_I = swap_a.c 
+_SRCS_I = swap_a.c \
+			rotate_a.c
 
 SRCS_P_DIR = push
 SRCS_I_DIR = instructions
