@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_a.c                                           :+:      :+:    :+:   */
+/*   push_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 00:47:16 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/05 00:51:22 by rpothier         ###   ########.fr       */
+/*   Created: 2024/04/05 00:51:55 by rpothier          #+#    #+#             */
+/*   Updated: 2024/04/05 00:53:10 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	push_a(t_list_element *a_head, t_list_element *b_head)
+void	push_b(t_list_element *a_head, t_list_element *b_head)
 {
 	
 }
