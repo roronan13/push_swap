@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/05 02:43:53 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/05 03:35:39 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	push_b(a_head, b_head);
 	//allo_a(a_head);
 	//allo_b(b_head);
-	clean(a_head);
+	//clean(a_head);
 	return (0);
 }
 

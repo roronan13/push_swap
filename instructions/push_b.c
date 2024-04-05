@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 00:51:55 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/05 02:53:59 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/05 03:38:41 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	push_b(t_list_element *a_head, t_list_element *b_head)
 {
 	//t_list_element	*temp_ptr;
-	
+	printf("allo4\n");
 	if (!b_head)
 	{
 		make_malloc(b_head = malloc(sizeof(t_list_element)));
@@ -29,11 +29,8 @@ void	push_b(t_list_element *a_head, t_list_element *b_head)
 		//free(temp_ptr);
 		//temp_ptr = NULL;
 	}
-	else
-	{
-		
-	}
 	printf("%d\n", a_head->content);
 	//printf("%d\n", a_head->previous->content);
 	//printf("%d\n", a_head->next->content);
+	//printf("oui\n");
 }
