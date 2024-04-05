@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/05 00:44:15 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/05 02:43:53 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 
 int	main(int argc, char **argv)
 {
-	t_list_element	*nbr_list;
+	t_list_element	*a_head;
+	t_list_element	*b_head;
 
 	check_errors(argc, argv);
-	nbr_list = create_list(argc, argv);
-	//swap_a(nbr_list);
-	//rotate_a(nbr_list);
-	reverse_rotate_a(nbr_list);
-	allo(nbr_list);
-	clean(nbr_list);
+	a_head = create_list(argc, argv);
+	b_head = NULL;
+	//swap_a(a_head);
+	//rotate_a(a_head);
+	//reverse_rotate_a(a_head);
+	push_b(a_head, b_head);
+	//allo_a(a_head);
+	//allo_b(b_head);
+	clean(a_head);
 	return (0);
 }
 
@@ -36,8 +40,8 @@ t_list_element	*create_list(int argc, char **argv)
 	i = 1;
 	make_malloc(head = malloc(sizeof(t_list_element)));
 	head->content = ft_atoi(argv[i]);
-	head->next = NULL;
-	head->previous = NULL;
+	//head->next = NULL;
+	//head->previous = NULL;
 	new_element = head;
 	while (argc > ++i)
 	{
@@ -72,7 +76,7 @@ void	clean(t_list_element *head)
 	head = NULL;
 }
 
-void	allo(t_list_element *head)
+void	allo_a(t_list_element *head)
 {
 	t_list_element	*temp;
 	int				i;
@@ -81,6 +85,26 @@ void	allo(t_list_element *head)
 	temp = head;
 	i = temp->content;
 	j = i + 1;
+	printf("      -- PILE A --\n");
+	while (j != i)
+	{
+		printf("%d\n", temp->content);
+		temp = temp->next;
+		j = temp->content;
+	}
+	printf("\n");
+}
+
+void	allo_b(t_list_element *head)
+{
+	t_list_element	*temp;
+	int				i;
+	int				j;
+
+	temp = head;
+	i = temp->content;
+	j = i + 1;
+	printf("      -- PILE B : --\n\n");
 	while (j != i)
 	{
 		printf("%d\n", temp->content);
