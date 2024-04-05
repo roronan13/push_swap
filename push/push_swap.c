@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/05 04:03:15 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/05 05:06:48 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	main(int argc, char **argv)
 	t_list_element	*a_head;
 	t_list_element	*b_head;
 
-	//printf("salut\n");
 	check_errors(argc, argv);
 	a_head = create_list(argc, argv);
 	b_head = NULL;
@@ -25,6 +24,7 @@ int	main(int argc, char **argv)
 	//rotate_a(a_head);
 	//reverse_rotate_a(a_head);
 	push_b(a_head, b_head);
+	printf("help : %d\n", a_head->content);
 	//allo_a(a_head);
 	//allo_b(b_head);
 	//clean(a_head);
@@ -85,14 +85,16 @@ void	allo_a(t_list_element *head)
 
 	temp = head;
 	i = temp->content;
+	printf("i = %d", i);
 	j = i + 1;
 	printf("      -- PILE A --\n");
-	while (j != i)
+	/* while (j != i)
 	{
 		printf("%d\n", temp->content);
 		temp = temp->next;
 		j = temp->content;
-	}
+		printf("j = %d\n", j);
+	} */
 	printf("\n");
 }
 

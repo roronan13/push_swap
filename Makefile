@@ -4,7 +4,6 @@ _SRCS_P = push_swap.c\
 			push_swap_errors.c\
 			push_swap_utils_errors.c 
 _SRCS_I = swap_a.c\
-			push_a.c\
 			push_b.c\
 			rotate_a.c\
 			reverse_rotate_a.c
@@ -16,7 +15,7 @@ SRCS_I = $(addprefix $(SRCS_I_DIR)/, $(_SRCS_I))
 SRCO_P = $(SRCS_P:.c=.o)
 SRCO_I = $(SRCS_I:.c=.o)
 
-FLAG = -Wall -Wextra -Werror
+FLAG = -Wall -Wextra #-Werror
 INC = -I includes/
 
 all : $(NAME_P)
