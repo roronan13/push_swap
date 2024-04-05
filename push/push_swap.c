@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/05 03:35:39 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/05 04:03:15 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(int argc, char **argv)
 	t_list_element	*a_head;
 	t_list_element	*b_head;
 
+	//printf("salut\n");
 	check_errors(argc, argv);
 	a_head = create_list(argc, argv);
 	b_head = NULL;
