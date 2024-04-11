@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/11 19:15:15 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/11 23:10:16 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,15 @@ int	main(int argc, char **argv)
 	//rotate_a(a_head);
 	//reverse_rotate_a(a_head);
 	push_b(&a_head, &b_head);
-	//push_b(&a_head, &b_head);
-	allo_a(a_head);
-	allo_b(b_head);
+	push_b(&a_head, &b_head);
+	push_b(&a_head, &b_head);
+	push_b(&a_head, &b_head);
+	//allo_a(a_head);
+	//allo_b(b_head);
 	clean(a_head);
+	printf("CLEAN A FAIT\n");
 	clean(b_head);
+	printf("CLEAN B FAIT\n");
 	return (0);
 }
 
@@ -84,6 +88,11 @@ void	allo_a(t_list_element *head)
 	int				i;
 	int				j;
 
+	if (!head)
+	{
+		printf("LA PILE A EST VIDE\n");
+		return ;
+	}
 	temp = head;
 	i = temp->content;
 	//printf("i = %d\n", i);
@@ -104,6 +113,11 @@ void	allo_b(t_list_element *head)
 	int				i;
 	int				j;
 
+	if (!head)
+	{
+		printf("LA PILE B EST VIDE\n");
+		return ;
+	}
 	temp = head;
 	i = temp->content;
 	j = i + 1;

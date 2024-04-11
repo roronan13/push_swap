@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 00:51:55 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/11 19:15:41 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/11 23:08:12 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,12 @@ void	push_b(t_list_element **a_head, t_list_element **b_head)
 	}
 	(*a_head)->previous->next = (*a_head)->next;
 	(*a_head)->next->previous = (*a_head)->previous;
+	
 	temp_ptr = *a_head;
 	*a_head = (*a_head)->next;
 	free(temp_ptr);
+	//printf("a head %d\n", (*a_head)->content);
+	//printf("temp ptr %d\n", temp_ptr->content);
 	temp_ptr = NULL;
 	write(1, "pb\n", 3);
 }
