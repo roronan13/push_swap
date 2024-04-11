@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/12 00:09:10 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/12 00:18:11 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(int argc, char **argv)
 	//swap_a(a_head);
 	//rotate_a(a_head);
 	//reverse_rotate_a(a_head);
+	push_b(&a_head, &b_head);
 	push_b(&a_head, &b_head);
 	push_b(&a_head, &b_head);
 	push_b(&a_head, &b_head);
