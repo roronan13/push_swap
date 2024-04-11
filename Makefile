@@ -32,6 +32,8 @@ clean :
 
 fclean : clean
 	/bin/rm -f $(NAME_P)
+	/bin/rm -f $(SRCO_P)
+	/bin/rm -f $(SRCO_I)
 
 re :
 	make fclean
