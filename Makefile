@@ -6,7 +6,8 @@ _SRCS_P = push_swap.c\
 _SRCS_I = swap_a.c\
 			push_b.c\
 			rotate_a.c\
-			reverse_rotate_a.c
+			reverse_rotate_a.c\
+			utils_instructions.c
 
 SRCS_P_DIR = push
 SRCS_I_DIR = instructions

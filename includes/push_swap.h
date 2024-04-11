@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/05 05:44:14 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/11 18:57:45 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void			swap_a(t_list_element *head);
 void			push_b(t_list_element **a_head, t_list_element **b_head);
 void			rotate_a(t_list_element *head);
 void			reverse_rotate_a(t_list_element *head);
+t_list_element	*ft_lst_last(t_list_element *head);
 void			clean(t_list_element *head);
 void			make_malloc(void *ptr);
 void			allo_a(t_list_element *head);
