@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/11 23:10:16 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/11 23:50:24 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ void	clean(t_list_element *head)
 	t_list_element	*temp_first;
 	t_list_element	*temp_second;
 
+	if (!head)
+		return ;
 	temp_first = head;
 	temp_second = temp_first->next;
 	while (temp_second != head)

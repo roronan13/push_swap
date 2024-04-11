@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 00:51:55 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/11 23:08:12 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/11 23:38:59 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@ void	push_b(t_list_element **a_head, t_list_element **b_head)
 		(ft_lst_last(*b_head))->next = temp_ptr;
 		*b_head = temp_ptr;
 	}
+	if ((*a_head)->next == *a_head)
+		return (free(*a_head), *a_head = NULL);
 	(*a_head)->previous->next = (*a_head)->next;
 	(*a_head)->next->previous = (*a_head)->previous;
-	
 	temp_ptr = *a_head;
 	*a_head = (*a_head)->next;
 	free(temp_ptr);
