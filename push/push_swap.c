@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/16 19:42:49 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/16 21:10:47 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main(int argc, char **argv)
 	check_errors(argc, argv);
 	a_head = create_list(argc, argv);
 	b_head = NULL;
+	sort(a_head, b_head);
 	clean(a_head);
 	printf("CLEAN A FAIT\n");
 	clean(b_head);

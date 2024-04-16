@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/16 17:18:04 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/16 21:09:52 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int				ft_atoi(char *argv);
 void			check_overflow(char *argv, int i, int resu);
 int				*fill_int_table(int argc, char **argv);
 t_list_element	*create_list(int argc, char **argv);
+void			sort(t_list_element *a_head, t_list_element *b_head);
 void			swap_a(t_list_element *head);
 void			swap_b(t_list_element *head);
 void			swap_a_swap_b(t_list_element *a_head, t_list_element *b_head);

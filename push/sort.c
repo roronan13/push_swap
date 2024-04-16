@@ -6,10 +6,13 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/16 19:43:51 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/16 21:08:22 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort(t_list_element a)
+void	sort(t_list_element *a_head, t_list_element *b_head)
+{
+	
+}
