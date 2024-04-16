@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/16 16:36:07 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/16 17:00:45 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,9 @@ void			push_b(t_list_element **a_head, t_list_element **b_head);
 void			new_b_list(t_list_element **a_head, t_list_element **b_head);
 void			add_to_b_list(t_list_element **a_head, t_list_element **b_head, t_list_element **temp_ptr);
 void			rotate_a(t_list_element *head);
+void			rotate_b(t_list_element *head);
+void			rotate_a_rotate_b(t_list_element *a_head, t_list_element *b_head);
+void			rotate(t_list_element *head);
 void			reverse_rotate_a(t_list_element *head);
 t_list_element	*ft_lst_last(t_list_element *head);
 void			clean(t_list_element *head);

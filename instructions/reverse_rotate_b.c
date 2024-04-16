@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_a.c                                         :+:      :+:    :+:   */
+/*   reverse_rotate_b.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 22:52:42 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/16 16:57:41 by rpothier         ###   ########.fr       */
+/*   Created: 2024/04/16 17:06:59 by rpothier          #+#    #+#             */
+/*   Updated: 2024/04/16 17:07:38 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	rotate_a(t_list_element *head)
+void	reverse_rotate_b(t_list_element *head)
 {
-	rotate(head);
-	write(1, "ra\n", 3);
+	reverse_rotate(head);
+	write(1, "rrb\n", 4);
 }

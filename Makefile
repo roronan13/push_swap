@@ -5,10 +5,12 @@ _SRCS_P = push_swap.c\
 			push_swap_utils_errors.c 
 _SRCS_I = swap_a.c\
 			swap_b.c\
-			swap_a_swap_b.c\
+			ss.c\
 			push_a.c\
 			push_b.c\
 			rotate_a.c\
+			rotate_b.c\
+			rr.c\
 			reverse_rotate_a.c\
 			utils_instructions.c
 
