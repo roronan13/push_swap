@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:45:49 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/16 16:55:34 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/16 17:27:54 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	rotate(t_list_element *head)
 	int				int_1;
 	int				int_2;
 
+	if (!head)
+		return ;
 	temp_ptr = head->previous;
 	int_1 = head->content;
 	while (temp_ptr != head)

@@ -1,9 +1,9 @@
 NAME_P = push_swap
 
-_SRCS_P = push_swap.c\
+_SRCS_P = 	push_swap.c\
 			push_swap_errors.c\
 			push_swap_utils_errors.c 
-_SRCS_I = swap_a.c\
+_SRCS_I = 	swap_a.c\
 			swap_b.c\
 			ss.c\
 			push_a.c\
@@ -12,6 +12,8 @@ _SRCS_I = swap_a.c\
 			rotate_b.c\
 			rr.c\
 			reverse_rotate_a.c\
+			reverse_rotate_b.c\
+			rrr.c\
 			utils_instructions.c
 
 SRCS_P_DIR = push
