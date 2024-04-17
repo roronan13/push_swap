@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/17 17:37:38 by rpothier         ###   ########.fr       */
+/*   Created: 2024/04/17 17:28:25 by rpothier          #+#    #+#             */
+/*   Updated: 2024/04/17 17:36:36 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort(t_list_element *a_head, t_list_element *b_head)
+int	list_size(t_list_element *head)
 {
-	int	size;
+	t_list_element	*temp_ptr;
+	int				i;
 
-	size = list_size(a_head);
-	printf("%d\n", size);
+	temp_ptr = head;
+	i = 1;
+	if(!head)
+		return (0);
+	while (temp_ptr->next != head)
+	{
+		i++;
+		temp_ptr = temp_ptr->next;
+	}
+	return (i);
 }
