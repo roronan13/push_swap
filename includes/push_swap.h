@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/18 19:34:37 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/18 20:42:53 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct list
 {
 	int			content;
+	int			index;
 	struct list	*next;
 	struct list	*previous;
 }	t_list_element;
