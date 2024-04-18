@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/18 20:45:09 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:53:02 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@ int	main(int argc, char **argv)
 	a_head = create_list(argc, argv);
 	b_head = NULL;
 	sort(&a_head, &b_head);
+	/* push_b(&a_head, &b_head);
+	rotate_a(a_head);
+	push_b(&a_head, &b_head);
+	rev_rot_a_rev_rot_b(a_head, b_head);
+	swap_a(a_head);
+	push_a(&a_head, &b_head);
+	push_b(&a_head, &b_head);
+	push_b(&a_head, &b_head); */
 	allo_a(a_head);
 	allo_b(b_head);
 	clean(a_head);
@@ -88,7 +96,7 @@ void	allo_a(t_list_element *head)
 
 	if (!head)
 	{
-		printf("LA PILE A EST VIDE\n");
+		printf("-- LA PILE A EST VIDE --\n");
 		return ;
 	}
 	temp = head;
@@ -98,7 +106,7 @@ void	allo_a(t_list_element *head)
 	printf("      -- PILE A --\n");
 	while (j != i)
 	{
-		printf("%d\n", temp->content);
+		printf("%d / index = %d\n", temp->content, temp->index);
 		temp = temp->next;
 		j = temp->content;
 		//printf("j = %d\n", j);
@@ -113,7 +121,7 @@ void	allo_b(t_list_element *head)
 
 	if (!head)
 	{
-		printf("LA PILE B EST VIDE\n");
+		printf("-- LA PILE B EST VIDE --\n");
 		return ;
 	}
 	temp = head;
@@ -122,7 +130,7 @@ void	allo_b(t_list_element *head)
 	printf("      -- PILE B --\n");
 	while (j != i)
 	{
-		printf("%d\n", temp->content);
+		printf("%d / index = %d\n", temp->content, temp->index);
 		temp = temp->next;
 		j = temp->content;
 	}
