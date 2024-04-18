@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/17 17:55:14 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/18 19:14:33 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ int	main(int argc, char **argv)
 	a_head = create_list(argc, argv);
 	b_head = NULL;
 	sort(&a_head, &b_head);
-	//push_b(&a_head, &b_head);
-	//push_b(&a_head, &b_head);
 	allo_a(a_head);
 	allo_b(b_head);
 	clean(a_head);

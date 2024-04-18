@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/17 17:56:11 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/18 19:34:37 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,27 @@ void			check_params(int argc, char **argv);
 void			check_number(int argc, char **argv);
 void			check_long(int argc, char **argv);
 void			check_twice(int argc, char **argv);
+
+
 int				ft_atoi(char *argv);
 void			check_overflow(char *argv, int i, int resu);
 int				*fill_int_table(int argc, char **argv);
+
+
 t_list_element	*create_list(int argc, char **argv);
+void			clean(t_list_element *head);
+void			make_malloc(void *ptr);
+void			allo_a(t_list_element *head);
+void			allo_b(t_list_element *head);
+
+
 void			sort(t_list_element **a_head, t_list_element **b_head);
+
+
 int				list_size(t_list_element *head);
+t_list_element	*find_min(t_list_element *head);
+
+
 void			swap_a(t_list_element *head);
 void			swap_b(t_list_element *head);
 void			swap_a_swap_b(t_list_element *a_head, t_list_element *b_head);
@@ -54,10 +69,8 @@ void			reverse_rotate_a(t_list_element *head);
 void			reverse_rotate_b(t_list_element *head);
 void			rev_rot_a_rev_rot_b(t_list_element *a_head, t_list_element *b_head);
 void			reverse_rotate(t_list_element *head);
+
+
 t_list_element	*ft_lst_last(t_list_element *head);
-void			clean(t_list_element *head);
-void			make_malloc(void *ptr);
-void			allo_a(t_list_element *head);
-void			allo_b(t_list_element *head);
 
 #endif
