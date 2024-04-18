@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/18 20:42:53 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/18 23:56:17 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct list
 {
 	int			content;
 	int			index;
+	int			final;
 	struct list	*next;
 	struct list	*previous;
 }	t_list_element;
@@ -39,6 +40,7 @@ int				*fill_int_table(int argc, char **argv);
 
 
 t_list_element	*create_list(int argc, char **argv);
+void			set_final(t_list_element *head);
 void			clean(t_list_element *head);
 void			make_malloc(void *ptr);
 void			allo_a(t_list_element *head);

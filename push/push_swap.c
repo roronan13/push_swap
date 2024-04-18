@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/18 21:53:02 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/19 00:20:34 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int	main(int argc, char **argv)
 	check_errors(argc, argv);
 	a_head = create_list(argc, argv);
 	b_head = NULL;
+	set_final(a_head);
 	sort(&a_head, &b_head);
+	//printf("oui : %d\n", a_head->final);
 	/* push_b(&a_head, &b_head);
 	rotate_a(a_head);
 	push_b(&a_head, &b_head);
@@ -67,6 +69,19 @@ t_list_element	*create_list(int argc, char **argv)
 	return (head);
 }
 
+void	set_final(t_list_element *head)
+{
+	t_list_element	*temp;
+
+	temp = head->next;
+	head->final = 8;
+	while (temp != head)
+	{
+		temp->final = 8;
+		temp = temp->next;
+	}	
+}
+
 void	clean(t_list_element *head)
 {
 	t_list_element	*temp_first;
@@ -106,7 +121,7 @@ void	allo_a(t_list_element *head)
 	printf("      -- PILE A --\n");
 	while (j != i)
 	{
-		printf("%d / index = %d\n", temp->content, temp->index);
+		printf("%d / index = %d / final = %d\n", temp->content, temp->index, temp->final);
 		temp = temp->next;
 		j = temp->content;
 		//printf("j = %d\n", j);
@@ -130,7 +145,7 @@ void	allo_b(t_list_element *head)
 	printf("      -- PILE B --\n");
 	while (j != i)
 	{
-		printf("%d / index = %d\n", temp->content, temp->index);
+		printf("%d / index = %d / final = %d\n", temp->content, temp->index, temp->final);
 		temp = temp->next;
 		j = temp->content;
 	}
