@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/19 02:09:22 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:05:08 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 	{
 		while ((*a_head) != find_min(*a_head))
 		{
-			rotate_a(*a_head);
+			if (find_min(*a_head)->index < list_size(*a_head) / 2)
+				rotate_a(*a_head);
+			else
+				reverse_rotate_a(*a_head);
 		}
 		//(*a_head)->final = j;
 		//j++;
