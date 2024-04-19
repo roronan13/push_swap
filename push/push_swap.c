@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/19 00:20:34 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/19 02:14:22 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,25 @@ int	main(int argc, char **argv)
 	a_head = create_list(argc, argv);
 	b_head = NULL;
 	set_final(a_head);
+	//sort(&a_head, &b_head);
+	rotate_a(a_head);
+	rotate_a(a_head);
+	rotate_a(a_head);
+	reverse_rotate_a(a_head);
+	reverse_rotate_a(a_head);
+	reverse_rotate_a(a_head);
+	reverse_rotate_a(a_head);
+	reverse_rotate_a(a_head);
+	reverse_rotate_a(a_head);
+	swap_a(a_head);
+	reverse_rotate_a(a_head);
+	reverse_rotate_a(a_head);
+	push_b(&a_head, &b_head);
+	push_b(&a_head, &b_head);
+	push_b(&a_head, &b_head);
+	push_a(&a_head, &b_head);
+	push_a(&a_head, &b_head);
+	push_a(&a_head, &b_head);
 	sort(&a_head, &b_head);
 	//printf("oui : %d\n", a_head->final);
 	/* push_b(&a_head, &b_head);
@@ -51,6 +70,7 @@ t_list_element	*create_list(int argc, char **argv)
 	make_malloc(head = malloc(sizeof(t_list_element)));
 	head->content = ft_atoi(argv[i]);
 	head->index = i;
+	head->final = 1;
 	//head->next = NULL;
 	//head->previous = NULL;
 	new_element = head;
@@ -61,7 +81,8 @@ t_list_element	*create_list(int argc, char **argv)
 		new_element = new_element->next;
 		new_element->content = ft_atoi(argv[i]);
 		new_element->index = i;
-		new_element->next = NULL;
+		new_element->final = 1;
+		//new_element->next = NULL;
 		new_element->previous = previous_element;
 	}
 	new_element->next = head;
@@ -71,15 +92,23 @@ t_list_element	*create_list(int argc, char **argv)
 
 void	set_final(t_list_element *head)
 {
-	t_list_element	*temp;
+	t_list_element	*temp_1;
+	t_list_element	*temp_2;
 
-	temp = head->next;
-	head->final = 8;
-	while (temp != head)
+	temp_1 = head;
+	while (temp_1->next != head)
 	{
-		temp->final = 8;
-		temp = temp->next;
-	}	
+		temp_2 = temp_1->next;
+		while (temp_2 != head)
+		{
+			if (temp_1->content < temp_2->content)
+				temp_2->final = temp_2->final + 1;
+			else
+				temp_1->final = temp_1->final + 1;
+			temp_2 = temp_2->next;
+		}
+		temp_1 = temp_1->next;
+	}
 }
 
 void	clean(t_list_element *head)

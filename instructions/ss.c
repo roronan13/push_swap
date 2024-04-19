@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_a_swap_b.c                                    :+:      :+:    :+:   */
+/*   ss.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 16:32:12 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/16 16:35:42 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/19 02:01:11 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,18 @@ void	swap_a_swap_b(t_list_element *a_head, t_list_element *b_head)
 
 void	swap(t_list_element *head)
 {
-	int				temp_int;
+	int				temp_content;
+	int				temp_final;
 	t_list_element	*temp_ptr;
 
 	if (!head || head->next == head)
 		return ;
 	temp_ptr = head->next;
-	temp_int = temp_ptr->content;
+	temp_content = temp_ptr->content;
+	temp_final = temp_ptr->final;
 	temp_ptr->content = head->content;
-	head->content = temp_int;
+	temp_ptr->final = head->final;
+	head->content = temp_content;
+	head->final = temp_final;
 	temp_ptr = NULL;
 }
