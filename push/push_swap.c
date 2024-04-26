@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/25 20:23:56 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/26 17:43:26 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(int argc, char **argv)
 	a_head = create_list(argc, argv);
 	b_head = NULL;
 	set_final(a_head);
+	set_group(a_head);
 	//sort(&a_head, &b_head);
 	/* rotate_a(a_head);
 	rotate_a(a_head);
@@ -111,7 +112,20 @@ void	set_final(t_list_element *head)
 	}
 }
 
-//void	
+void	set_group(t_list_element *head)
+{
+	t_list_element	*temp;
+	int				i;
+	int				size;
+
+	temp = head;
+	i = 0;
+	size = list_size(head);
+	while (i++ < size)
+	{
+		if (temp->)
+	}
+}
 
 void	clean(t_list_element *head)
 {
