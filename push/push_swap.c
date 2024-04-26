@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/26 17:43:26 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/26 18:44:31 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 	push_a(&a_head, &b_head);
 	push_a(&a_head, &b_head);
 	push_a(&a_head, &b_head); */
-	sort(&a_head, &b_head);
+	//sort(&a_head, &b_head);
 	//printf("oui : %d\n", a_head->final);
 	/* push_b(&a_head, &b_head);
 	rotate_a(a_head);
@@ -117,13 +117,40 @@ void	set_group(t_list_element *head)
 	t_list_element	*temp;
 	int				i;
 	int				size;
+	int				k;
 
 	temp = head;
 	i = 0;
 	size = list_size(head);
 	while (i++ < size)
 	{
-		if (temp->)
+		temp->group = 0;
+		temp = temp->next;
+	}
+	i = 0;
+	while (i++ < size)
+	{
+		/* if (temp->final <= size / 5)
+			temp->group = 1;
+		else if (temp->final <= (size / 5) * 2)
+			temp->group = 2;
+		else if (temp->final <= (size / 5) * 3)
+			temp->group = 3;
+		else if (temp->final <= (size / 5) * 4)
+			temp->group = 4;
+		else if (temp->final <= (size / 5) * 5)
+			temp->group = 5;
+		temp = temp->next; */
+		
+		k = 0;
+		while (temp->group == 0)
+		{
+			if ((temp->final / (size / 10)) <= k)
+				temp->group = k;
+			else
+				k++;
+		}
+		temp = temp->next;
 	}
 }
 
@@ -166,7 +193,7 @@ void	allo_a(t_list_element *head)
 	printf("      -- PILE A --\n");
 	while (j != i)
 	{
-		printf("%d / index = %d / final = %d\n", temp->content, temp->index, temp->final);
+		printf("%d / index = %d / final = %d / groupe = %d\n", temp->content, temp->index, temp->final, temp->group);
 		temp = temp->next;
 		j = temp->content;
 		//printf("j = %d\n", j);
@@ -190,7 +217,7 @@ void	allo_b(t_list_element *head)
 	printf("      -- PILE B --\n");
 	while (j != i)
 	{
-		printf("%d / index = %d / final = %d\n", temp->content, temp->index, temp->final);
+		printf("%d / index = %d / final = %d / groupe = %d\n", temp->content, temp->index, temp->final, temp->group);
 		temp = temp->next;
 		j = temp->content;
 	}
