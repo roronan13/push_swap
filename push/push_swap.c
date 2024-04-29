@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/26 19:17:11 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/29 23:47:37 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(int argc, char **argv)
 	b_head = NULL;
 	set_final(a_head);
 	set_group(a_head);
+	
 	//sort(&a_head, &b_head);
 	/* rotate_a(a_head);
 	rotate_a(a_head);
