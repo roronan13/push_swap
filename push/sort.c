@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/30 20:06:06 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/30 21:45:35 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 	{
 		//printf("OUI 1\n");
 		i = 0;
+		ptr = *a_head;
 		//printf("taille 1 : %d\n", list_size(*a_head));
 		while (i < list_size(*a_head))
 		{
 			//printf("taille : %d\n", list_size(*a_head));
-			ptr = *a_head;
+			//ptr = *a_head;
 			if (ptr->group == nth_group)
 			{
 				printf("PTR GROUPPPPPP : %d\n", ptr->group);
@@ -47,6 +48,7 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 				}
 				printf("OUI 1 : %d\n", (*a_head)->group);
 				push_b(a_head, b_head);
+				ptr = *a_head;
 				printf("OUI 2 : %d\n", (*a_head)->group);
 				printf("taille 2 : %d\n", list_size(*a_head));
 				printf("PTR GROUP : %d\n", ptr->group);
@@ -55,12 +57,13 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 			}
 			else
 			{
-				//printf("else ??\n");
+				printf("else ??\n");
 				ptr = ptr->next;
 			}
 			i++;
 		}
 		nth_group++;
+		printf("NTH GROUP AAA : %d\n", nth_group);
 	}
 }
 
