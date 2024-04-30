@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:55:14 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/30 14:00:48 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/30 15:24:52 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	new_a_list(t_list_element **a_head, t_list_element **b_head)
 	make_malloc(*a_head = malloc(sizeof(t_list_element)));
 	(*a_head)->content = (*b_head)->content;
 	(*a_head)->final = (*b_head)->final;
+	(*a_head)->group = (*b_head)->group;
 	(*a_head)->index = 1;
 	(*a_head)->next = *a_head;
 	(*a_head)->previous = *a_head;
@@ -62,6 +63,7 @@ void	add_to_a_list(t_list_element **a_head, t_list_element **b_head, t_list_elem
 	(*temp_ptr)->previous = ft_lst_last(*a_head);
 	(*temp_ptr)->content = (*b_head)->content;
 	(*temp_ptr)->final = (*b_head)->final;
+	(*temp_ptr)->group = (*b_head)->group;
 	(*temp_ptr)->index = 1;
 	(ft_lst_last(*a_head))->next = *temp_ptr;
 	while (*a_head != *temp_ptr)
