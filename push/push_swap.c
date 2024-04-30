@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/29 23:47:37 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/30 10:13:52 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,7 @@ t_list_element	*create_list(int argc, char **argv)
 	make_malloc(head = malloc(sizeof(t_list_element)));
 	head->content = ft_atoi(argv[i]);
 	head->index = i;
-	head->final = 1;
-	//head->next = NULL;
-	//head->previous = NULL;
+	head->final = 0;
 	new_element = head;
 	while (argc > ++i)
 	{
@@ -83,8 +81,7 @@ t_list_element	*create_list(int argc, char **argv)
 		new_element = new_element->next;
 		new_element->content = ft_atoi(argv[i]);
 		new_element->index = i;
-		new_element->final = 1;
-		//new_element->next = NULL;
+		new_element->final = 0;
 		new_element->previous = previous_element;
 	}
 	new_element->next = head;
@@ -117,36 +114,22 @@ void	set_group(t_list_element *head)
 {
 	t_list_element	*temp;
 	int				i;
-	int				size;
 	int				k;
 
 	temp = head;
 	i = 0;
-	size = list_size(head);
-	while (i++ < size)
+	while (i++ < list_size(head))
 	{
 		temp->group = 0;
 		temp = temp->next;
 	}
 	i = 0;
-	while (i++ < size)
+	while (i++ < list_size(head))
 	{
-		/* if (temp->final <= size / 5)
-			temp->group = 1;
-		else if (temp->final <= (size / 5) * 2)
-			temp->group = 2;
-		else if (temp->final <= (size / 5) * 3)
-			temp->group = 3;
-		else if (temp->final <= (size / 5) * 4)
-			temp->group = 4;
-		else if (temp->final <= (size / 5) * 5)
-			temp->group = 5;
-		temp = temp->next; */
-		
 		k = 1;
 		while (temp->group == 0)
 		{
-			if ((temp->final / (size / 10)) <= (k))
+			if ((temp->final / (list_size(head) / 10)) <= k)
 				temp->group = k;
 			else
 				k++;
