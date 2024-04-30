@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/30 16:33:16 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/30 19:45:53 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,51 @@
 
 void	sort(t_list_element **a_head, t_list_element **b_head)
 {
+	int				nth_group;
+	t_list_element	*ptr;
+	int				i;
+	//int				size;
+
+	nth_group = 2;
+	//size = list_size(*a_head);
 	while (*a_head)
 	{
-		
+		//printf("OUI 1\n");
+		i = 0;
+		//printf("taille 1 : %d\n", list_size(*a_head));
+		while (i++ < list_size(*a_head))
+		{
+			//printf("taille : %d\n", list_size(*a_head));
+			ptr = *a_head;
+			if (ptr->group == nth_group)
+			{
+				printf("PTR GROUPPPPPP : %d\n", ptr->group);
+				printf("NTH GROUP : %d\n", nth_group);
+				while (*a_head != ptr)
+				{
+					if (ptr->index < list_size(*a_head) / 2)
+					{
+						rotate_a(*a_head);
+					}
+					else
+					{
+						reverse_rotate_a(*a_head);
+					}
+				}
+				printf("OUI 1 : %d\n", (*a_head)->group);
+				push_b(a_head, b_head);
+				printf("OUI 2 : %d\n", (*a_head)->group);
+				printf("taille 2 : %d\n", list_size(*a_head));
+				printf("PTR GROUP : %d\n", ptr->group);
+			}
+			else
+			{
+				ptr = ptr->next;
+			}
+		}
+		nth_group++;
 	}
+}
 
 
 
@@ -28,7 +69,7 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 
 
 	
-	int	i;
+/* 	int	i;
 	int	size;
 	t_list_element	*temp_ptr;
 	//int	j;
@@ -77,7 +118,7 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 			temp_ptr = temp_ptr->next;
 		}
 		push_a(a_head, b_head);
-	}
+	} */
 	/* while (*a_head)
 	{
 		push_b(a_head, b_head);
@@ -86,4 +127,3 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 	} */
 	//while (*b_head)
 	//	push_a(a_head, b_head);
-}
