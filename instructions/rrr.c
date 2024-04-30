@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 17:03:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/19 01:57:38 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/30 15:15:34 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,23 @@ void	reverse_rotate(t_list_element *head)
 	}
 	temp_ptr->content = content_1;
 	temp_ptr->final = final_1;
-	temp_ptr = NULL;
+	reverse_rotate_group(head);
+}
+
+void	reverse_rotate_group(t_list_element *head)
+{
+	t_list_element	*temp_ptr;
+	int				group_1;
+	int				group_2;
+
+	temp_ptr = head->next;
+	group_1 = head->group;
+	while (temp_ptr != head)
+	{
+		group_2 = temp_ptr->group;
+		temp_ptr->group = group_1;
+		group_1 = group_2;
+		temp_ptr = temp_ptr->next;
+	}
+	temp_ptr->group = group_1;
 }
