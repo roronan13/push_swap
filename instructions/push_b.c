@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 00:51:55 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/19 00:10:34 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/30 14:00:44 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	push_b(t_list_element **a_head, t_list_element **b_head)
 {
 	t_list_element	*temp_ptr;
+	
 	if (!*a_head)
 		return ;
 	if (!*b_head)
