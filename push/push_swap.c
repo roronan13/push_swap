@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/01 00:39:53 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/01 01:13:27 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ int	main(int argc, char **argv)
 	set_group(a_head);
 	
 	sort(&a_head, &b_head);
-	allo_a(a_head);
-	allo_b(b_head);
+	//allo_a(a_head);
+	//allo_b(b_head);
 	clean(a_head);
-	printf("CLEAN A FAIT\n");
+	//printf("CLEAN A FAIT\n");
 	clean(b_head);
-	printf("CLEAN B FAIT\n");
+	//printf("CLEAN B FAIT\n");
 	return (0);
 }
 
@@ -102,7 +102,7 @@ void	set_group(t_list_element *head)
 		while (temp->group == 0)
 		{
 			//if ((temp->final / (list_size(head) / 10)) < k)
-			if (temp->final < ((list_size(head) / 10) + 1) * k)
+			if (temp->final < ((list_size(head) / 6) + 1) * k)
 				temp->group = k;
 			else
 				k++;

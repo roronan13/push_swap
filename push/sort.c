@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/01 00:47:43 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/01 01:14:25 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 			}
 			i++;
 		}
-		printf("i : %d\n", i);
+		//printf("i : %d\n", i);
 		nth_group++;
 	}
 }
