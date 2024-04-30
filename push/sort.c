@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/26 17:38:28 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:33:16 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,20 @@
 
 void	sort(t_list_element **a_head, t_list_element **b_head)
 {
+	while (*a_head)
+	{
+		
+	}
+
+
+
+
+
+
+
+
+
+	
 	int	i;
 	int	size;
 	t_list_element	*temp_ptr;
@@ -64,7 +78,6 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 		}
 		push_a(a_head, b_head);
 	}
-	//allo_b(*b_head);
 	/* while (*a_head)
 	{
 		push_b(a_head, b_head);
