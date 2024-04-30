@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/30 22:53:42 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/04/30 23:46:54 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,15 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 	//size = list_size(*a_head);
 	while (*a_head)
 	{
-		//printf("OUI 1\n");
 		i = 0;
 		ptr = *a_head;
-		//printf("taille 1 : %d\n", list_size(*a_head));
 		while (i <= list_size(*a_head))
 		{
-			//printf("taille : %d\n", list_size(*a_head));
 			//ptr = *a_head;
+			if (list_size(*a_head) == 0)
+				break ;
 			if (ptr->group == nth_group)
 			{
-				printf("PTR GROUPPPPPP : %d\n", ptr->group);
-				printf("NTH GROUP : %d\n", nth_group);
 				while ((*a_head)->group != nth_group)
 				{
 					if (ptr->index <= (list_size(*a_head) / 2) + 1)
@@ -46,24 +43,17 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 						reverse_rotate_a(*a_head);
 					}
 				}
-				printf("OUI 1 : %d\n", (*a_head)->group);
 				push_b(a_head, b_head);
+				//i = 0;
 				ptr = *a_head;
-				printf("OUI 2 : %d\n", (*a_head)->group);
-				printf("taille 2 : %d\n", list_size(*a_head));
-				printf("PTR GROUP : %d\n", ptr->group);
-				printf("NTH GROUP XXX : %d\n", nth_group);
-				printf("IIIII : %d\n", i);
 			}
 			else
 			{
-				printf("else ??\n");
 				ptr = ptr->next;
 			}
 			i++;
 		}
 		nth_group++;
-		printf("NTH GROUP AAA : %d\n", nth_group);
 	}
 }
 
