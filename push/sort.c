@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/01 00:14:29 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/01 00:47:43 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 					}
 				}
 				push_b(a_head, b_head);
-				//i = 0;
+				i = 0;
 				ptr = *a_head;
 			}
 			else
@@ -53,6 +53,7 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 			}
 			i++;
 		}
+		printf("i : %d\n", i);
 		nth_group++;
 	}
 }
