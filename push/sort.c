@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/01 16:18:27 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/01 17:46:33 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 	int				nth_group;
 	t_list_element	*ptr;
 	int				i;
+	int				size;
 
 	nth_group = 1;
-	while (*a_head)
+	size = list_size(*a_head);
+	while (list_size(*a_head) > 3)
 	{
 		i = -1;
 		ptr = *a_head;
-		while (++i <= list_size(*a_head) && (*a_head))
+		while (++i <= list_size(*a_head))
 		{
 			if (ptr->group == nth_group)
 			{
@@ -34,13 +36,41 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 					else
 						reverse_rotate_a(*a_head);
 				}
-				push_b((i = 0, a_head), b_head);
-				ptr = *a_head;
+				if (ptr->final < size - 3)
+				{
+					push_b((i = 0, a_head), b_head);
+					ptr = *a_head;
+				}
+				else
+					ptr = ptr->next;
 			}
 			else
 				ptr = ptr->next;
 		}
 		nth_group++;
+	}
+}
+
+void	sort_three(t_list_element *a_head)
+{
+	if (a_head == find_min(a_head))
+	{
+		if (a_head->next->content > a_head->previous->content)
+			reverse_rotate_a((rotate_a(a_head), swap_a(a_head), a_head));
+	}
+	else if (a_head->next == find_min(a_head))
+	{
+		if (a_head->content < a_head->previous->content)
+			swap_a(a_head);
+		else
+			rotate_a(a_head);
+	}
+	else
+	{
+		if (a_head->content < a_head->next->content)
+			reverse_rotate_a(a_head);
+		else
+			reverse_rotate_a((swap_a(a_head), a_head));
 	}
 }
 

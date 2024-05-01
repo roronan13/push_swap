@@ -1,5 +1,12 @@
 {
 	"files.associations": {
 		"stdio.h": "c"
-	}
+	},
+	"makefile.launchConfigurations": [
+		{
+			"cwd": "/home/rpothier/Desktop/push_swap",
+			"binaryPath": "/home/rpothier/Desktop/push_swap/push_swap",
+			"binaryArgs": []
+		}
+	]
 }
