@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/01 01:14:25 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/01 15:48:14 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,44 +17,58 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 	int				nth_group;
 	t_list_element	*ptr;
 	int				i;
-	//int				size;
 
 	nth_group = 1;
-	//size = list_size(*a_head);
 	while (*a_head)
 	{
 		i = 0;
 		ptr = *a_head;
-		while (i <= list_size(*a_head))
+		while (i <= list_size(*a_head) && (*a_head))
 		{
-			//ptr = *a_head;
-			if (list_size(*a_head) == 0)
-				break ;
 			if (ptr->group == nth_group)
 			{
 				while ((*a_head)->group != nth_group)
 				{
 					if (ptr->index <= (list_size(*a_head) / 2) + 1)
-					{
 						rotate_a(*a_head);
-					}
 					else
-					{
 						reverse_rotate_a(*a_head);
-					}
 				}
 				push_b(a_head, b_head);
 				i = 0;
 				ptr = *a_head;
 			}
 			else
-			{
 				ptr = ptr->next;
-			}
 			i++;
 		}
-		//printf("i : %d\n", i);
 		nth_group++;
+	}
+}
+
+void	sort_back(t_list_element **a_head, t_list_element **b_head)
+{
+	int	max;
+	t_list_element	*ptr;
+	
+	while (*b_head)
+	{
+		ptr = *b_head;
+		max = list_size(*b_head);
+		while (ptr->final != max)
+			ptr = ptr->next;
+		while ((*b_head)->final != max)
+		{
+			if ((*b_head)->final == max - 1)
+				push_a(a_head, b_head);
+			else if (ptr->index <= (list_size(*b_head) / 2) + 1)
+				rotate_b(*b_head);
+			else
+				reverse_rotate_b(*b_head);
+		}
+		push_a(a_head, b_head);
+		if ((*a_head)->next && (*a_head)->content > (*a_head)->next->content)
+			swap_a(*a_head);
 	}
 }
 
