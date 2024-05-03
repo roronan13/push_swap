@@ -6,7 +6,7 @@
 /*   By: ronanpothier <ronanpothier@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/03 17:38:12 by ronanpothie      ###   ########.fr       */
+/*   Updated: 2024/05/03 18:49:45 by ronanpothie      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 	{
 		sort(&a_head, &b_head);
 		sort_three(a_head);
-		sort_back(&a_head, &b_head);
+		//sort_back(&a_head, &b_head);
 	}
 	allo_a(a_head);
 	allo_b(b_head);

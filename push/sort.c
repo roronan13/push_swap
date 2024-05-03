@@ -6,7 +6,7 @@
 /*   By: ronanpothier <ronanpothier@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/03 18:45:25 by ronanpothie      ###   ########.fr       */
+/*   Updated: 2024/05/03 19:00:16 by ronanpothie      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -30,6 +30,7 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 		{
 			if (ptr->group == nth_group)
 			{
+				printf(" --  %d\n", (*a_head)->content);
 				current = ptr->content;
 				while ((*a_head)->content != current)
 				{
@@ -38,13 +39,16 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 					else
 						reverse_rotate_a(*a_head);
 				}
-				if ((*a_head)->final < size - 3)
+				if ((*a_head)->final <= size - 3)
 				{
 					push_b((i = -1, a_head), b_head);
 					ptr = *a_head;
 				}
 				else
+				{
 					ptr = ptr->next;
+					i = -1;
+				}
 			}
 			else
 				ptr = ptr->next;
