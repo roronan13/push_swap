@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ronanpothier <ronanpothier@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/01 17:50:10 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:38:12 by ronanpothie      ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "../includes/push_swap.h"
 
@@ -28,11 +28,11 @@ int	main(int argc, char **argv)
 	else
 	{
 		sort(&a_head, &b_head);
-		//sort_three(a_head);
+		sort_three(a_head);
 		sort_back(&a_head, &b_head);
 	}
-	//allo_a(a_head);
-	//allo_b(b_head);
+	allo_a(a_head);
+	allo_b(b_head);
 	clean(a_head);
 	//printf("CLEAN A FAIT\n");
 	clean(b_head);

@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ronanpothier <ronanpothier@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/01 17:46:33 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/03 18:26:33 by ronanpothie      ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "../includes/push_swap.h"
 
@@ -36,9 +36,9 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 					else
 						reverse_rotate_a(*a_head);
 				}
-				if (ptr->final < size - 3)
+				if ((*a_head)->final < size - 3)
 				{
-					push_b((i = 0, a_head), b_head);
+					push_b((i = -1, a_head), b_head);
 					ptr = *a_head;
 				}
 				else
