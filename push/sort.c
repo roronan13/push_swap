@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/07 14:53:50 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:00:52 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,8 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 		ptr = *a_head;
 		while ((++i <= list_size(*a_head)) && list_size(*a_head) > 3)
 		{
-			if (ptr->group == nth_group && ptr->final <= size - 3)
+			if ((ptr->group == nth_group || ptr->group == nth_group + 1) && ptr->final <= size - 3)
 			{
-				//printf(" --  %d\n", (*a_head)->content);
 				current = ptr->content;
 				while ((*a_head)->content != current /*&& ptr->final <= size - 3*/)
 				{
@@ -41,8 +40,17 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 				}
 				if ((*a_head)->final <= size - 3)
 				{
-					push_b((i = -1, a_head), b_head);
-					ptr = *a_head;
+					if ((*a_head)->group == nth_group)
+					{
+						push_b((i = -1, a_head), b_head);
+						ptr = *a_head;
+					}
+					else if ((*a_head)->group == nth_group + 1)
+					{
+						push_b((i = -1, a_head), b_head);
+						rotate_b(*b_head);
+						ptr = *a_head;
+					}
 				}
 				else
 				{
@@ -53,7 +61,7 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 			else
 				ptr = ptr->next;
 		}
-		nth_group++;
+		nth_group = nth_group + 2;
 	}
 }
 
