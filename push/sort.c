@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/07 19:13:14 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/07 19:26:36 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,7 @@ void	sort_three(t_list_element *a_head)
 	if (a_head == find_min(a_head))
 	{
 		if (a_head->next->content > a_head->previous->content)
-			reverse_rotate_a((rotate_a(a_head), swap_a(a_head), a_head));
-			re
+			swap_a((reverse_rotate_a(a_head), a_head));
 	}
 	else if (a_head->next == find_min(a_head))
 	{
@@ -167,19 +166,4 @@ void	sort_back(t_list_element **a_head, t_list_element **b_head)
 				push_a(a_head, b_head);
 			temp_ptr = temp_ptr->next;
 		}
-		temp_ptr = (*b_head)->next;
-		while ((*b_head)->final != (*a_head)->final + 1 && temp_ptr != *b_head)
-		{
-			rotate_a(*a_head);
-			temp_ptr = temp_ptr->next;
-		}
-		push_a(a_head, b_head);
-	} */
-	/* while (*a_head)
-	{
-		push_b(a_head, b_head);
-		if ((*b_head)->content < (*b_head)->next->content)
-			swap_b(*b_head);
-	} */
-	//while (*b_head)
-	//	push_a(a_head, b_head);
+*/

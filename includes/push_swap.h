@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/01 17:03:27 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/07 19:36:25 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void			sort_three(t_list_element *a_head);
 
 int				list_size(t_list_element *head);
 t_list_element	*find_min(t_list_element *head);
+int				is_sorted(t_list_element *head);
 
 
 void			swap_a(t_list_element *head);

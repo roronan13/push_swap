@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:28:25 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/18 23:48:14 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/07 19:40:32 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,25 @@ t_list_element	*find_min(t_list_element *head)
 	while (temp->content != i)
 		temp = temp->next;
 	return (temp);
+}
+
+int	is_sorted(t_list_element *head)
+{
+	t_list_element	*temp_1;
+	t_list_element	*temp_2;
+	int				first_content;
+
+	first_content = head->content;
+	temp_1 = head->next;
+	temp_2 = temp_1->next;
+	if (head->content > temp_1->content)
+		return (0);
+	while (temp_1->content != first_content)
+	{
+		if (temp_1->content > temp_2->content)
+			return (0);
+		temp_1 = temp_1->next;
+		temp_2 = temp_2->next;
+	}
+	return (1);
 }
