@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/07 13:34:43 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:53:50 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 		ptr = *a_head;
 		while ((++i <= list_size(*a_head)) && list_size(*a_head) > 3)
 		{
-			if (ptr->group == nth_group)
+			if (ptr->group == nth_group && ptr->final <= size - 3)
 			{
-				printf(" --  %d\n", (*a_head)->content);
+				//printf(" --  %d\n", (*a_head)->content);
 				current = ptr->content;
-				while ((*a_head)->content != current)
+				while ((*a_head)->content != current /*&& ptr->final <= size - 3*/)
 				{
 					if (ptr->index <= (list_size(*a_head) / 2) + 1)
 						rotate_a(*a_head);
