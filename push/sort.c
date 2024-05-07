@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/07 18:00:52 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/07 19:13:14 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void	sort_three(t_list_element *a_head)
 	{
 		if (a_head->next->content > a_head->previous->content)
 			reverse_rotate_a((rotate_a(a_head), swap_a(a_head), a_head));
+			re
 	}
 	else if (a_head->next == find_min(a_head))
 	{
