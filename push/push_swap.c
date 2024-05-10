@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/10 15:35:12 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/10 17:59:19 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,16 @@ int	main(int argc, char **argv)
 		clean(a_head);
 		exit(EXIT_SUCCESS);
 	}
-	if (argc == 4)
-		sort_three(a_head);
+	if (argc == 5)
+		sort_five(&a_head, &b_head);
 	else
 	{
 		sort(&a_head, &b_head);
 		sort_three(a_head);
 		sort_back(&a_head, &b_head);
 	}
-
-	allo_a(a_head);
-	allo_b(b_head);
+	//allo_a(a_head);
+	//allo_b(b_head);
 	clean(a_head);
 	//printf("CLEAN A FAIT\n");
 	clean(b_head);

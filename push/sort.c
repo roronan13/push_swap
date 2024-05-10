@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/07 19:26:36 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/10 17:56:42 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,21 @@ void	sort_back(t_list_element **a_head, t_list_element **b_head)
 		if ((*a_head)->next && (*a_head)->content > (*a_head)->next->content)
 			swap_a(*a_head);
 	}
+}
+
+void	sort_five(t_list_element **a_head, t_list_element **b_head)
+{
+	while (list_size(*a_head) > 3)
+	{
+		while ((*a_head)->final != 1 && (*a_head)->final != 2)
+			rotate_a(*a_head);
+		push_b(a_head, b_head);
+	}
+	sort_three(*a_head);
+	push_a(a_head, b_head);
+	push_a(a_head, b_head);
+	if ((*a_head)->content > (*a_head)->next->content)
+		swap_a(*a_head);
 }
 
 
