@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/07 20:07:39 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/10 15:35:12 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ int	main(int argc, char **argv)
 {
 	t_list_element	*a_head;
 	t_list_element	*b_head;
+	char			**list;
 
-	check_errors(argc, argv);
-	a_head = create_list(argc, argv);
+	list = check_errors(&argc, argv, NULL);
+	a_head = create_list(argc, list);
+	ft_free(list);
 	b_head = NULL;
 	set_final(a_head);
 	set_group(a_head);
@@ -52,7 +54,7 @@ t_list_element	*create_list(int argc, char **argv)
 	t_list_element	*previous_element;
 	int				i;
 
-	i = 1;
+	i = 0;
 	make_malloc(head = malloc(sizeof(t_list_element)));
 	head->content = ft_atoi(argv[i]);
 	head->index = i;

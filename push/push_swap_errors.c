@@ -6,18 +6,49 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/03/28 21:48:38 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/10 15:39:26 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	check_errors(int argc, char **argv)
+char	**check_errors(int *argc, char **argv, char **list)
 {
-	check_params(argc, argv);
-	check_number(argc, argv);
-	check_long(argc, argv);
-	check_twice(argc, argv);
+	char	*first_list;
+	int		i;
+	
+	i = 0;
+	check_params(*argc, argv);
+	if (*argc == 2)
+	{
+		make_malloc(first_list = ft_strtrim(argv[1], "\""));
+		make_malloc(list = ft_split(first_list, ' '));
+		free(first_list);
+	}
+	else
+	{
+		make_malloc(list = malloc(sizeof(char*) * *argc));
+		while (argv[i + 1])
+		{
+			list[i] = ft_strdup(argv[i + 1]);
+			if (!list[i])
+				ft_free(list);
+			i++;
+		}
+		list[i] = NULL;
+	}
+	i = 0;
+	while(list[i])
+	{
+		printf("%s\n", list[i]);
+		i++;
+	}
+	i = tab_size(list);
+	*argc = i;
+	check_number(i, list);
+	check_long(i, list);
+	check_twice(i, list);
+	return (list);
 }
 
 void	check_params(int argc, char **argv)
@@ -31,7 +62,7 @@ void	check_number(int argc, char **argv)
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	while (i < argc)
 	{
 		j = 0;
@@ -43,7 +74,7 @@ void	check_number(int argc, char **argv)
 				j++;
 			else
 			{
-				write(2, "Error 1\n", 8);
+				write(2, "Error\n", 6);
 				exit(EXIT_FAILURE);
 			}
 		}
@@ -55,9 +86,11 @@ void	check_long(int argc, char **argv)
 {
 	int	i;
 
-	i = 1;
-	while (i < argc)
+	i = 0;
+	(void)argc;
+	while (argv[i])
 	{
+		printf("%s\n", argv[i]);
 		ft_atoi(argv[i]);
 		i++;
 	}
@@ -71,14 +104,14 @@ void	check_twice(int argc, char **argv)
 
 	i = 0;
 	nbr_table = fill_int_table(argc, argv);
-	while (i <= (argc - 3))
+	while (i <= (argc - 2))
 	{
 		j = i + 1;
-		while (j <= (argc - 2))
+		while (j <= (argc - 1))
 		{
 			if (nbr_table[i] == nbr_table[j])
 			{
-				write(2, "Error 3\n", 8);
+				write(2, "Error\n", 6);
 				exit(EXIT_FAILURE);
 			}
 			j++;

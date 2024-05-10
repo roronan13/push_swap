@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/07 19:36:25 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/10 15:27:51 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct list
 	struct list	*previous;
 }	t_list_element;
 
-void			check_errors(int argc, char **argv);
+char			**check_errors(int *argc, char **argv, char **list);
 void			check_params(int argc, char **argv);
 void			check_number(int argc, char **argv);
 void			check_long(int argc, char **argv);
@@ -57,6 +57,16 @@ void			sort_three(t_list_element *a_head);
 int				list_size(t_list_element *head);
 t_list_element	*find_min(t_list_element *head);
 int				is_sorted(t_list_element *head);
+
+char	**ft_split(char const *s, char c);
+char	*ft_strtrim(char const *s1, char const *set);
+int	tab_size(char **tab);
+char	*ft_strdup(const char *s);
+char	**ft_free(char **ptr);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+size_t	ft_strlen(const char *s);
+char	*ft_strchr(const char *s, int c);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 
 void			swap_a(t_list_element *head);
