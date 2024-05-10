@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/10 15:39:26 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:03:30 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	**check_errors(int *argc, char **argv, char **list)
 	i = 0;
 	while(list[i])
 	{
-		printf("%s\n", list[i]);
+		//printf("%s\n", list[i]);
 		i++;
 	}
 	i = tab_size(list);
@@ -90,7 +90,7 @@ void	check_long(int argc, char **argv)
 	(void)argc;
 	while (argv[i])
 	{
-		printf("%s\n", argv[i]);
+		//printf("%s\n", argv[i]);
 		ft_atoi(argv[i]);
 		i++;
 	}

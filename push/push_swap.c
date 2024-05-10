@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/10 17:59:19 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:49:57 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void	set_group(t_list_element *head)
 		while (temp->group == 0)
 		{
 			//if ((temp->final / (list_size(head) / 10)) < k)
-			if (temp->final < ((list_size(head) / 15) + 1) * k)
+			if (temp->final < ((list_size(head) / 17) + 1) * k)
 				temp->group = k;
 			else
 				k++;

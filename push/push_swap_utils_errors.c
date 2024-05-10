@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/10 15:55:07 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:03:19 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,7 @@ char	*ft_strdup(const char *s)
 		return (NULL);
 	//printf("ptr 1 : %s\n", ptr);
 	ft_memcpy(ptr, s, a + 1);
-	printf("ptr 2 : %s\n", ptr);
+	//printf("ptr 2 : %s\n", ptr);
 	return (ptr);
 }
 
