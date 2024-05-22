@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 00:51:55 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/30 15:24:00 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/23 00:39:19 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,11 @@ void	push_b(t_list_element **a_head, t_list_element **b_head)
 
 void	new_b_list(t_list_element **a_head, t_list_element **b_head)
 {
-	make_malloc(*b_head = malloc(sizeof(t_list_element)));
+	if (!make_malloc(*b_head = malloc(sizeof(t_list_element))))
+	{
+		clean(*a_head);
+		exit(EXIT_FAILURE);
+	}
 	(*b_head)->content = (*a_head)->content;
 	(*b_head)->final = (*a_head)->final;
 	(*b_head)->group = (*a_head)->group;
@@ -57,7 +61,12 @@ void	new_b_list(t_list_element **a_head, t_list_element **b_head)
 
 void	add_to_b_list(t_list_element **a_head, t_list_element **b_head, t_list_element **temp_ptr)
 {
-	make_malloc(*temp_ptr = malloc(sizeof(t_list_element)));
+	if (!make_malloc(*temp_ptr = malloc(sizeof(t_list_element))))
+	{
+		clean(*a_head);
+		clean(*b_head);
+		exit(EXIT_FAILURE);
+	}
 	(*b_head)->previous = *temp_ptr;
 	(*temp_ptr)->next = *b_head;
 	(*temp_ptr)->previous = ft_lst_last(*b_head);
