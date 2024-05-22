@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/10 17:53:58 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/22 21:59:49 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ t_list_element	*create_list(int argc, char **argv);
 void			set_final(t_list_element *head);
 void			set_group(t_list_element *head);
 void			clean(t_list_element *head);
-void			make_malloc(void *ptr);
+void			*make_malloc(void *ptr);
 void			allo_a(t_list_element *head);
 void			allo_b(t_list_element *head);
 

@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/22 18:21:16 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/22 22:51:35 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,24 @@ char	**check_errors(int *argc, char **argv, char **list)
 	check_params(*argc, argv);
 	if (*argc == 2)
 	{
-		make_malloc(first_list = ft_strtrim(argv[1], "\""));
-		make_malloc(list = ft_split(first_list, ' '));
+		if (!make_malloc(first_list = ft_strtrim(argv[1], "\"")))
+			return (NULL);
+		if (!make_malloc(list = ft_split(first_list, ' ')))
+			return (NULL);
 		free(first_list);
 	}
 	else
 	{
-		make_malloc(list = malloc(sizeof(char*) * *argc));
+		if (!make_malloc(list = malloc(sizeof(char*) * *argc)))
+			return (NULL);
 		while (argv[i + 1])
 		{
 			list[i] = ft_strdup(argv[i + 1]);
 			if (!list[i])
+			{
 				ft_free(list);
+				return (NULL);
+			}
 			i++;
 		}
 		list[i] = NULL;

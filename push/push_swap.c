@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/22 19:05:46 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/22 23:45:55 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ int	main(int argc, char **argv)
 	t_list_element	*b_head;
 	char			**list;
 
-	list = check_errors(&argc, argv, NULL);
-	a_head = create_list(argc, list);
+	if (!(list = check_errors(&argc, argv, NULL)))
+		exit(EXIT_FAILURE);
+	if (!(a_head = create_list(argc, list)))
+		exit(EXIT_FAILURE);
 	ft_free(list);
 	b_head = NULL;
 	set_final(a_head);
@@ -37,8 +39,8 @@ int	main(int argc, char **argv)
 		sort_three(a_head);
 		sort_back(&a_head, &b_head);
 	}
-	//allo_a(a_head);
-	//allo_b(b_head);
+	allo_a(a_head);
+	allo_b(b_head);
 	clean(a_head);
 	//printf("CLEAN A FAIT\n");
 	clean(b_head);
@@ -54,14 +56,22 @@ t_list_element	*create_list(int argc, char **argv)
 	int				i;
 
 	i = 0;
-	make_malloc(head = malloc(sizeof(t_list_element)));
+	if (!make_malloc(head = malloc(sizeof(t_list_element))))
+		return (NULL);
+	//head = malloc(sizeof(t_list_element));
+	//if (!head)
+	//	return (NULL);
 	head->content = ft_atoi(argv[i]);
 	head->index = i;
 	head->final = 1;
 	new_element = head;
 	while (argc > ++i)
 	{
-		make_malloc(new_element->next = malloc(sizeof(t_list_element)));
+		if (!make_malloc(new_element->next = malloc(sizeof(t_list_element))))
+		{
+			clean(head);
+			return (NULL);
+		}
 		previous_element = new_element;
 		new_element = new_element->next;
 		new_element->content = ft_atoi(argv[i]);
@@ -137,6 +147,8 @@ void	clean(t_list_element *head)
 	{
 		free(temp_first);
 		temp_first = temp_second;
+		if (!temp_second)
+			break;
 		temp_second = temp_second->next;
 	}
 	free(temp_first);
@@ -193,8 +205,10 @@ void	allo_b(t_list_element *head)
 	}
 }
 
-void	make_malloc(void *ptr)
+void	*make_malloc(void *ptr)
 {
 	if (!ptr)
-		exit(EXIT_FAILURE);
+		//exit(EXIT_FAILURE);
+		return (NULL);
+	return (ptr);
 }

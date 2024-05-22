@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/22 18:34:14 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/22 19:54:34 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,8 @@ char	*ft_strdup(const char *s)
 	size_t	a;
 
 	a = ft_strlen(s);
-	ptr = malloc(sizeof(char) * a + 1);
+	//ptr = malloc(sizeof(char) * a + 1);
+	ptr = malloc(sizeof(char) * (a + 1));
 	if (!ptr)
 		return (NULL);
 	//printf("ptr 1 : %s\n", ptr);

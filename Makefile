@@ -26,7 +26,7 @@ SRCS_I = $(addprefix $(SRCS_I_DIR)/, $(_SRCS_I))
 SRCO_P = $(SRCS_P:.c=.o)
 SRCO_I = $(SRCS_I:.c=.o)
 
-FLAG = -Wall -Wextra -Werror
+FLAG = -Wall -Wextra -Werror -g3
 INC = -I includes/
 
 all : $(NAME_P)
