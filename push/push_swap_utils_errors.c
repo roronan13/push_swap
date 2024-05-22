@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/10 18:03:19 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/22 18:34:14 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	ft_atoi(char *argv)
 		i++;
 	while (i - 1 >= 0 && argv[i - 1] >= 48 && argv[i - 1] <= 57)
 	{
-		if (j > 1000000000)
+		if (j > 1000000000 && argv[i - 1] != '0')
 		{
-			write(2, "Error\n", 6);
+			write(2, "Error1\n", 7);
 			exit(EXIT_FAILURE);
 		}
 		if (j == 1000000000)
@@ -36,7 +36,7 @@ int	ft_atoi(char *argv)
 		j *= 10;
 		i--;
 	}
-	if (i - 1 == 0)
+	if (argv[0] == '-')
 		return (-resu);
 	return (resu);
 }
@@ -48,14 +48,14 @@ void	check_overflow(char *argv, int i, int resu)
 		if (((argv[i - 1] - 48) == 2 && resu > 147483648)
 			|| (argv[i - 1] - 48) > 2)
 		{
-			write(2, "Error\n", 6);
+			write(2, "Error2\n", 7);
 			exit(EXIT_FAILURE);
 		}
 	}
 	else if (((argv[i - 1] - 48) == 2 && resu > 147483647)
 		|| argv[i - 1] - 48 > 2)
 	{
-		write(2, "Error\n", 6);
+		write(2, "Error3\n", 7);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -71,7 +71,7 @@ int	*fill_int_table(int argc, char **argv)
 	{
 		free(nbr_table);
 		nbr_table = NULL;
-		write(2, "Error\n", 6);
+		write(2, "Error4\n", 7);
 		exit(EXIT_FAILURE);
 	}
 	while (argv[i])
