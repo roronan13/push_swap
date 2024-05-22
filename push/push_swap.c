@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/22 23:45:55 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/23 00:43:32 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_list_element	*create_list(int argc, char **argv)
 	t_list_element	*previous_element;
 	int				i;
 
-	i = 0;
+	i = 1;
 	if (!make_malloc(head = malloc(sizeof(t_list_element))))
 		return (NULL);
 	//head = malloc(sizeof(t_list_element));
