@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/22 18:08:42 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/22 19:05:46 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 		sort_three(a_head);
 		sort_back(&a_head, &b_head);
 	}
-	allo_a(a_head);
+	//allo_a(a_head);
 	//allo_b(b_head);
 	clean(a_head);
 	//printf("CLEAN A FAIT\n");
