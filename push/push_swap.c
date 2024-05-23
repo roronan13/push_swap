@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/23 18:22:25 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/23 19:20:42 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 	set_group(a_head);
 	if (is_sorted(a_head))
 	{
-		clean(a_head);
+		//clean(a_head);
 		exit(EXIT_SUCCESS);
 	}
 	if (argc == 5)
@@ -69,7 +69,7 @@ node	*create_list(int argc, char **argv)
 	{
 		if (!make_malloc(new_element->next = malloc(sizeof(node))))
 		{
-			clean(head);
+			//clean(head);
 			return (NULL);
 		}
 		previous_element = new_element;
