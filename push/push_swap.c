@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/23 13:02:14 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/23 15:43:27 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	t_list_element	*a_head;
-	t_list_element	*b_head;
+	node	*a_head;
+	node	*b_head;
 	char			**list;
 
 	if (!(list = check_errors(&argc, argv, NULL)))
@@ -48,17 +48,17 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-t_list_element	*create_list(int argc, char **argv)
+node	*create_list(int argc, char **argv)
 {
-	t_list_element	*head;
-	t_list_element	*new_element;
-	t_list_element	*previous_element;
+	node	*head;
+	node	*new_element;
+	node	*previous_element;
 	int				i;
 
 	i = 1;
-	if (!make_malloc(head = malloc(sizeof(t_list_element))))
+	if (!make_malloc(head = malloc(sizeof(node))))
 		return (NULL);
-	//head = malloc(sizeof(t_list_element));
+	//head = malloc(sizeof(node));
 	//if (!head)
 	//	return (NULL);
 	head->content = ft_atoi(argv[i]);
@@ -67,7 +67,7 @@ t_list_element	*create_list(int argc, char **argv)
 	new_element = head;
 	while (argc > ++i)
 	{
-		if (!make_malloc(new_element->next = malloc(sizeof(t_list_element))))
+		if (!make_malloc(new_element->next = malloc(sizeof(node))))
 		{
 			clean(head);
 			return (NULL);
@@ -84,10 +84,10 @@ t_list_element	*create_list(int argc, char **argv)
 	return (head);
 }
 
-void	set_final(t_list_element *head)
+void	set_final(node *head)
 {
-	t_list_element	*temp_1;
-	t_list_element	*temp_2;
+	node	*temp_1;
+	node	*temp_2;
 
 	temp_1 = head;
 	while (temp_1->next != head)
@@ -105,9 +105,9 @@ void	set_final(t_list_element *head)
 	}
 }
 
-void	set_group(t_list_element *head)
+void	set_group(node *head)
 {
-	t_list_element	*temp;
+	node	*temp;
 	int				i;
 	int				k;
 
@@ -134,10 +134,10 @@ void	set_group(t_list_element *head)
 	}
 }
 
-void	clean(t_list_element *head)
+void	clean(node *head)
 {
-	t_list_element	*temp_first;
-	t_list_element	*temp_second;
+	node	*temp_first;
+	node	*temp_second;
 
 	if (!head)
 		return ;
@@ -157,9 +157,9 @@ void	clean(t_list_element *head)
 	head = NULL;
 }
 
-void	allo_a(t_list_element *head)
+void	allo_a(node *head)
 {
-	t_list_element	*temp;
+	node	*temp;
 	int				i;
 	int				j;
 
@@ -182,9 +182,9 @@ void	allo_a(t_list_element *head)
 	}
 }
 
-void	allo_b(t_list_element *head)
+void	allo_b(node *head)
 {
-	t_list_element	*temp;
+	node	*temp;
 	int				i;
 	int				j;
 

@@ -6,15 +6,15 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 00:51:55 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/23 00:39:19 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/23 15:40:46 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	push_b(t_list_element **a_head, t_list_element **b_head)
+void	push_b(node **a_head, node **b_head)
 {
-	t_list_element	*temp_ptr;
+	node	*temp_ptr;
 	
 	if (!*a_head)
 		return ;
@@ -44,9 +44,9 @@ void	push_b(t_list_element **a_head, t_list_element **b_head)
 	write(1, "pb\n", 3);
 }
 
-void	new_b_list(t_list_element **a_head, t_list_element **b_head)
+void	new_b_list(node **a_head, node **b_head)
 {
-	if (!make_malloc(*b_head = malloc(sizeof(t_list_element))))
+	if (!make_malloc(*b_head = malloc(sizeof(node))))
 	{
 		clean(*a_head);
 		exit(EXIT_FAILURE);
@@ -59,9 +59,9 @@ void	new_b_list(t_list_element **a_head, t_list_element **b_head)
 	(*b_head)->previous = *b_head;
 }
 
-void	add_to_b_list(t_list_element **a_head, t_list_element **b_head, t_list_element **temp_ptr)
+void	add_to_b_list(node **a_head, node **b_head, node **temp_ptr)
 {
-	if (!make_malloc(*temp_ptr = malloc(sizeof(t_list_element))))
+	if (!make_malloc(*temp_ptr = malloc(sizeof(node))))
 	{
 		clean(*a_head);
 		clean(*b_head);

@@ -6,25 +6,25 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 16:32:12 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/30 13:56:39 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/23 15:42:14 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	swap_a_swap_b(t_list_element *a_head, t_list_element *b_head)
+void	swap_a_swap_b(node *a_head, node *b_head)
 {
 	swap(a_head);
 	swap(b_head);
 	write(1, "ss\n", 3);
 }
 
-void	swap(t_list_element *head)
+void	swap(node *head)
 {
 	int				temp_content;
 	int				temp_final;
 	int				temp_group;
-	t_list_element	*temp_ptr;
+	node	*temp_ptr;
 
 	if (!head || head->next == head)
 		return ;

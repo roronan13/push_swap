@@ -6,22 +6,22 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 17:03:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/30 15:15:34 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/23 15:41:58 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	rev_rot_a_rev_rot_b(t_list_element *a_head, t_list_element *b_head)
+void	rev_rot_a_rev_rot_b(node *a_head, node *b_head)
 {
 	reverse_rotate(a_head);
 	reverse_rotate(b_head);
 	write(1, "rrr\n", 4);
 }
 
-void	reverse_rotate(t_list_element *head)
+void	reverse_rotate(node *head)
 {
-	t_list_element	*temp_ptr;
+	node	*temp_ptr;
 	int				content_1;
 	int				content_2;
 	int				final_1;
@@ -47,9 +47,9 @@ void	reverse_rotate(t_list_element *head)
 	reverse_rotate_group(head);
 }
 
-void	reverse_rotate_group(t_list_element *head)
+void	reverse_rotate_group(node *head)
 {
-	t_list_element	*temp_ptr;
+	node	*temp_ptr;
 	int				group_1;
 	int				group_2;
 

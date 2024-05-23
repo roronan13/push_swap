@@ -6,16 +6,16 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/10 17:56:42 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/23 15:43:57 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort(t_list_element **a_head, t_list_element **b_head)
+void	sort(node **a_head, node **b_head)
 {
 	int				nth_group;
-	t_list_element	*ptr;
+	node	*ptr;
 	int				i;
 	int				size;
 	int				current;
@@ -65,7 +65,7 @@ void	sort(t_list_element **a_head, t_list_element **b_head)
 	}
 }
 
-void	sort_three(t_list_element *a_head)
+void	sort_three(node *a_head)
 {
 	if (a_head == find_min(a_head))
 	{
@@ -88,10 +88,10 @@ void	sort_three(t_list_element *a_head)
 	}
 }
 
-void	sort_back(t_list_element **a_head, t_list_element **b_head)
+void	sort_back(node **a_head, node **b_head)
 {
 	int	max;
-	t_list_element	*ptr;
+	node	*ptr;
 	
 	while (*b_head)
 	{
@@ -114,7 +114,7 @@ void	sort_back(t_list_element **a_head, t_list_element **b_head)
 	}
 }
 
-void	sort_five(t_list_element **a_head, t_list_element **b_head)
+void	sort_five(node **a_head, node **b_head)
 {
 	while (list_size(*a_head) > 3)
 	{
@@ -141,7 +141,7 @@ void	sort_five(t_list_element **a_head, t_list_element **b_head)
 	
 /* 	int	i;
 	int	size;
-	t_list_element	*temp_ptr;
+	node	*temp_ptr;
 	//int	j;
 
 	i = 0;

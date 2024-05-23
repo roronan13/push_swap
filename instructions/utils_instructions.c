@@ -6,15 +6,15 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:27:56 by rpothier          #+#    #+#             */
-/*   Updated: 2024/04/11 17:44:49 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/23 15:42:36 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_list_element	*ft_lst_last(t_list_element *head)
+node	*ft_lst_last(node *head)
 {
-	t_list_element	*temp_ptr;
+	node	*temp_ptr;
 
 	temp_ptr = head;
 	if(!head)
