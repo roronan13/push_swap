@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/23 16:08:06 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/23 18:22:25 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int	main(int argc, char **argv)
 		sort_three(a_head);
 		sort_back(&a_head, &b_head);
 	}
-	allo_a(a_head);
-	allo_b(b_head);
+	//allo_a(a_head);
+	//allo_b(b_head);
 	clean(a_head);
 	//printf("CLEAN A FAIT\n");
 	clean(b_head);
@@ -55,7 +55,7 @@ node	*create_list(int argc, char **argv)
 	node	*previous_element;
 	int				i;
 
-	i = 1;
+	i = 0;
 	if (!make_malloc(head = malloc(sizeof(node))))
 		return (NULL);
 	//head = malloc(sizeof(node));
@@ -208,7 +208,6 @@ void	allo_b(node *head)
 void	*make_malloc(void *ptr)
 {
 	if (!ptr)
-		//exit(EXIT_FAILURE);
 		return (NULL);
 	return (ptr);
 }
