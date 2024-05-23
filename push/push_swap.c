@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/23 15:43:27 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/23 16:08:06 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	main(int argc, char **argv)
 	char			**list;
 
 	if (!(list = check_errors(&argc, argv, NULL)))
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	if (!(a_head = create_list(argc, list)))
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	ft_free(list);
 	b_head = NULL;
 	set_final(a_head);

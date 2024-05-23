@@ -2,7 +2,7 @@ NAME_P = push_swap
 
 _SRCS_P = 	push_swap.c\
 			push_swap_errors.c\
-			push_swap_utils_errors.c\
+			push_swap_errors_utils.c\
 			sort.c\
 			sort_utils.c\
 			split.c

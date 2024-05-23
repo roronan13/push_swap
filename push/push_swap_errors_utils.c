@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils_errors.c                           :+:      :+:    :+:   */
+/*   push_swap_errors_utils.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/22 19:54:34 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/23 16:31:42 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,7 @@ int	*fill_int_table(int argc, char **argv)
 	i = 0;
 	nbr_table = malloc(sizeof(int) * argc);
 	if (!nbr_table)
-	{
-		free(nbr_table);
-		nbr_table = NULL;
-		write(2, "Error4\n", 7);
-		exit(EXIT_FAILURE);
-	}
+		exit(EXIT_SUCCESS);
 	while (argv[i])
 	{
 		nbr_table[i] = ft_atoi(argv[i]);
