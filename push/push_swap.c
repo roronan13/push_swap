@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/24 17:36:06 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/24 18:14:27 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,20 @@ int	main(int argc, char **argv)
 	node	*b_head;
 	char			**list;
 
-	list = check_errors(&argc, argv, NULL);
-	if (!(a_head = create_list(argc, list)))
+	if (!(list = check_errors(&argc, argv, NULL)))
 		exit(EXIT_SUCCESS);
+	if (!(a_head = create_list(argc, list)))
+	{
+		ft_free(list);
+		exit(EXIT_SUCCESS);
+	}
 	ft_free(list);
 	b_head = NULL;
 	set_final(a_head);
 	set_group(a_head);
 	if (is_sorted(a_head))
 	{
-		//clean(a_head);
+		clean(a_head);
 		exit(EXIT_SUCCESS);
 	}
 	if (argc == 5)
@@ -68,7 +72,7 @@ node	*create_list(int argc, char **argv)
 	{
 		if (!make_malloc(new_element->next = malloc(sizeof(node))))
 		{
-			//clean(head);
+			clean(head);
 			return (NULL);
 		}
 		previous_element = new_element;
