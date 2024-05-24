@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/23 19:20:42 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/24 17:36:06 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ int	main(int argc, char **argv)
 	node	*b_head;
 	char			**list;
 
-	if (!(list = check_errors(&argc, argv, NULL)))
-		exit(EXIT_SUCCESS);
+	list = check_errors(&argc, argv, NULL);
 	if (!(a_head = create_list(argc, list)))
 		exit(EXIT_SUCCESS);
 	ft_free(list);
