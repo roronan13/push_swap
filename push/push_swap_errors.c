@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/29 22:11:42 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 00:13:00 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ void	check_long(int argc, char **argv)
 	while (argv[i])
 	{
 		//printf("%s\n", argv[i]);
-		ft_atoi(argv[i]);
+		ft_atoi(argv[i], argv);
 		i++;
 	}
 }

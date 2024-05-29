@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/29 21:17:24 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 00:18:20 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void			check_long(int argc, char **argv);
 int				check_twice(int argc, char **argv);
 
 
-int				ft_atoi(char *argv);
-void			check_overflow(char *argv, int i, int resu);
+int				ft_atoi(char *argv, char **ptr_argv);
+void			check_overflow(char *argv, int i, int resu, char **ptr_argv);
 int				*fill_int_table(int argc, char **argv);
 
 

@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/29 19:04:27 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 00:17:31 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ node	*create_list(int argc, char **argv)
 	//head = malloc(sizeof(node));
 	//if (!head)
 	//	return (NULL);
-	head->content = ft_atoi(argv[i]);
+	head->content = ft_atoi(argv[i], NULL);
 	head->index = i + 1;
 	head->final = 1;
 	new_element = head;
@@ -77,7 +77,7 @@ node	*create_list(int argc, char **argv)
 		}
 		previous_element = new_element;
 		new_element = new_element->next;
-		new_element->content = ft_atoi(argv[i]);
+		new_element->content = ft_atoi(argv[i], NULL);
 		new_element->index = i + 1;
 		new_element->final = 1;
 		new_element->previous = previous_element;

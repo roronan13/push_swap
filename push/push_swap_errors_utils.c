@@ -6,13 +6,13 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/29 22:22:41 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 00:19:01 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_atoi(char *argv)
+int	ft_atoi(char *argv, char **ptr_argv)
 {
 	int			i;
 	long long	j;
@@ -28,11 +28,11 @@ int	ft_atoi(char *argv)
 		if (j > 1000000000 && argv[i - 1] != '0')
 		{
 			write(2, "Error1\n", 7);
-			ft_free(&argv);
+			ft_free(ptr_argv);
 			exit(EXIT_FAILURE);
 		}
 		if (j == 1000000000)
-			check_overflow(argv, i, resu);
+			check_overflow(argv, i, resu, ptr_argv);
 		resu += (argv[i - 1] - 48) * j;
 		j *= 10;
 		i--;
@@ -42,7 +42,7 @@ int	ft_atoi(char *argv)
 	return (resu);
 }
 
-void	check_overflow(char *argv, int i, int resu)
+void	check_overflow(char *argv, int i, int resu, char **ptr_argv)
 {
 	if (argv[0] == '-')
 	{
@@ -50,7 +50,7 @@ void	check_overflow(char *argv, int i, int resu)
 			|| (argv[i - 1] - 48) > 2)
 		{
 			write(2, "Error2\n", 7);
-			ft_free(&argv);
+			ft_free(ptr_argv);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -58,7 +58,7 @@ void	check_overflow(char *argv, int i, int resu)
 		|| argv[i - 1] - 48 > 2)
 	{
 		write(2, "Error3\n", 7);
-		ft_free(&argv);
+		ft_free(ptr_argv);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -74,7 +74,7 @@ int	*fill_int_table(int argc, char **argv)
 		return (NULL);
 	while (argv[i])
 	{
-		nbr_table[i] = ft_atoi(argv[i]);
+		nbr_table[i] = ft_atoi(argv[i], NULL);
 		i++;
 	}
 	return (nbr_table);
