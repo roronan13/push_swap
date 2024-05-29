@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/29 17:18:08 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/29 21:18:38 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,17 @@ char	**check_errors(int *argc, char **argv, char **list)
 	}
 	i = tab_size(list);
 	*argc = i;
-	check_number(i, list);
+	if (!check_number(i, list))
+	{
+		ft_free(list);
+		return (NULL);
+	}
 	check_long(i, list);
 	if (!check_twice(i, list))
+	{
+		ft_free(list);
 		return (NULL);
+	}
 	return (list);
 }
 
@@ -67,7 +74,7 @@ void	check_params(int argc, char **argv)
 		exit(EXIT_SUCCESS);
 }
 
-void	check_number(int argc, char **argv)
+int	check_number(int argc, char **argv)
 {
 	int	i;
 	int	j;
@@ -85,11 +92,13 @@ void	check_number(int argc, char **argv)
 			else
 			{
 				write(2, "Error5\n", 7);
-				exit(EXIT_FAILURE);
+				//exit(EXIT_FAILURE);
+				return (0);
 			}
 		}
 		i++;
 	}
+	return (1);
 }
 
 void	check_long(int argc, char **argv)
@@ -124,7 +133,9 @@ int	check_twice(int argc, char **argv)
 			if (nbr_table[i] == nbr_table[j])
 			{
 				write(2, "Error6\n", 7);
-				exit(EXIT_FAILURE);
+				free(nbr_table);
+				//exit(EXIT_FAILURE);
+				return (0);
 			}
 			j++;
 		}

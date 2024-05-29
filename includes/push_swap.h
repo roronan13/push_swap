@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/29 17:17:48 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/29 21:17:24 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct list
 
 char			**check_errors(int *argc, char **argv, char **list);
 void			check_params(int argc, char **argv);
-void			check_number(int argc, char **argv);
+int				check_number(int argc, char **argv);
 void			check_long(int argc, char **argv);
 int				check_twice(int argc, char **argv);
 
