@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/24 17:46:34 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/29 17:18:08 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ char	**check_errors(int *argc, char **argv, char **list)
 	*argc = i;
 	check_number(i, list);
 	check_long(i, list);
-	check_twice(i, list);
+	if (!check_twice(i, list))
+		return (NULL);
 	return (list);
 }
 
@@ -105,7 +106,7 @@ void	check_long(int argc, char **argv)
 	}
 }
 
-void	check_twice(int argc, char **argv)
+int	check_twice(int argc, char **argv)
 {
 	int	*nbr_table;
 	int	i;
@@ -113,6 +114,8 @@ void	check_twice(int argc, char **argv)
 
 	i = 0;
 	nbr_table = fill_int_table(argc, argv);
+	if (!nbr_table)
+		return (0);
 	while (i <= (argc - 2))
 	{
 		j = i + 1;
@@ -128,5 +131,5 @@ void	check_twice(int argc, char **argv)
 		i++;
 	}
 	free(nbr_table);
-	nbr_table = NULL;
+	return (1);
 }
