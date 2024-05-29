@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/24 18:14:27 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/29 19:04:27 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int	main(int argc, char **argv)
 		sort_three(a_head);
 		sort_back(&a_head, &b_head);
 	}
-	//allo_a(a_head);
-	//allo_b(b_head);
+	allo_a(a_head);
+	allo_b(b_head);
 	clean(a_head);
 	//printf("CLEAN A FAIT\n");
 	clean(b_head);
@@ -65,7 +65,7 @@ node	*create_list(int argc, char **argv)
 	//if (!head)
 	//	return (NULL);
 	head->content = ft_atoi(argv[i]);
-	head->index = i;
+	head->index = i + 1;
 	head->final = 1;
 	new_element = head;
 	while (argc > ++i)
@@ -78,7 +78,7 @@ node	*create_list(int argc, char **argv)
 		previous_element = new_element;
 		new_element = new_element->next;
 		new_element->content = ft_atoi(argv[i]);
-		new_element->index = i;
+		new_element->index = i + 1;
 		new_element->final = 1;
 		new_element->previous = previous_element;
 	}
