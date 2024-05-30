@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:55:14 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 16:15:19 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 18:33:05 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ void	push_a(t_node **a_head, t_node **b_head)
 	if ((*b_head)->next == *b_head)
 	{
 		free(*b_head);
-		*b_head = NULL;
-		write(1, "pa\n", 3);
+		write((*b_head = NULL, 1), "pa\n", 3);
 		return ;
 	}
 	temp_ptr = (*b_head)->next;
@@ -37,9 +36,7 @@ void	push_a(t_node **a_head, t_node **b_head)
 	}
 	(*b_head)->previous->next = (*b_head)->next;
 	(*b_head)->next->previous = (*b_head)->previous;
-	temp_ptr = *b_head;
-	*b_head = (*b_head)->next;
-	free(temp_ptr);
+	free((temp_ptr = *b_head, *b_head = (*b_head)->next, temp_ptr));
 	temp_ptr = NULL;
 	write(1, "pa\n", 3);
 }

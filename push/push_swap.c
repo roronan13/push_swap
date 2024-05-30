@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 17:37:25 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 18:28:31 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,41 +14,6 @@
 
 int	main(int argc, char **argv)
 {
-	/*t_node	*a_head;
-	t_node	*b_head;
-	char			**list;
-
-	if (!(list = check_errors(&argc, argv, NULL)))
-		exit(EXIT_SUCCESS);
-	if (!(a_head = create_list(argc, list)))
-	{
-		ft_free(list);
-		exit(EXIT_SUCCESS);
-	}
-	ft_free(list);
-	b_head = NULL;
-	set_final(a_head);
-	set_group(a_head);
-	if (is_sorted(a_head))
-	{
-		clean(a_head);
-		exit(EXIT_SUCCESS);
-	}
-	if (argc == 5)
-		sort_five(&a_head, &b_head);
-	else
-	{
-		sort(&a_head, &b_head);
-		sort_three(a_head);
-		sort_back(&a_head, &b_head);
-	}
-	//allo_a(a_head);
-	//allo_b(b_head);
-	clean(a_head);
-	//printf("CLEAN A FAIT\n");
-	clean(b_head);
-	//printf("CLEAN B FAIT\n");
-	return (0);*/
 	t_node			*a_head;
 	t_node			*b_head;
 	char			**list;
@@ -62,26 +27,27 @@ int	main(int argc, char **argv)
 			set_final(a_head);
 			set_group(a_head);
 			if (is_sorted(a_head))
-			{
-				clean(a_head);
-				exit(EXIT_SUCCESS);
-			}
+				exit((clean(a_head), EXIT_SUCCESS));
 			if (argc == 5)
 				sort_five(&a_head, &b_head);
 			else
-			{
-				sort(&a_head, &b_head);
-				sort_three(a_head);
-				sort_back(&a_head, &b_head);
-			}
-			clean(a_head);
-			clean(b_head);
-			return (0);
+				sort_back((sort(&a_head, &b_head), sort_three(a_head), \
+				&a_head), &b_head);
+			return (clean(a_head), clean(b_head), 0);
 		}
-		ft_free(list);
-		exit(EXIT_FAILURE);
+		exit((ft_free(list), EXIT_FAILURE));
 	}
 	exit(EXIT_FAILURE);
+}
+
+void	creat_2(t_node *previous_element, t_node **new_element, char **argv, int i)
+{
+	previous_element = *new_element;
+	*new_element = (*new_element)->next;
+	(*new_element)->content = ft_atoi(argv[i], NULL);
+	(*new_element)->index = i + 1;
+	(*new_element)->final = 1;
+	(*new_element)->previous = previous_element;
 }
 
 t_node	*create_list(int argc, char **argv)
@@ -92,11 +58,9 @@ t_node	*create_list(int argc, char **argv)
 	int				i;
 
 	i = 0;
+	previous_element = NULL;
 	if (!make_malloc(head = malloc(sizeof(t_node))))
 		return (NULL);
-	//head = malloc(sizeof(t_node));
-	//if (!head)
-	//	return (NULL);
 	head->content = ft_atoi(argv[i], NULL);
 	head->index = i + 1;
 	head->final = 1;
@@ -108,12 +72,7 @@ t_node	*create_list(int argc, char **argv)
 			clean(head);
 			return (NULL);
 		}
-		previous_element = new_element;
-		new_element = new_element->next;
-		new_element->content = ft_atoi(argv[i], NULL);
-		new_element->index = i + 1;
-		new_element->final = 1;
-		new_element->previous = previous_element;
+		creat_2(previous_element, &new_element, argv, i);
 	}
 	new_element->next = head;
 	head->previous = new_element;

@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 16:09:28 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 18:34:15 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,6 @@ char	**check_errors(int *argc, char **argv, char **list)
 			i++;
 		}
 		list[i] = NULL;
-	}
-	i = 0;
-	while(list[i])
-	{
-		//printf("%s\n", list[i]);
-		i++;
 	}
 	i = tab_size(list);
 	*argc = i;

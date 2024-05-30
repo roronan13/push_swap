@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 16:15:32 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 18:21:09 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int				*fill_int_table(int argc, char **argv);
 
 
 t_node	*create_list(int argc, char **argv);
+void	creat_2(t_node *previous_element, t_node **new_element, char **argv, int i);
 void			set_final(t_node *head);
 void			set_group(t_node *head);
 void			clean(t_node *head);
