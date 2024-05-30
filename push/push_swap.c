@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 16:43:52 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:37:25 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,7 +162,7 @@ void	set_group(t_node *head)
 		{
 			if (list_size(head) <= 100)
 			{
-				if (temp->final < ((list_size(head) / 5) + 1) * k)
+				if (temp->final < ((list_size(head) / 7) + 1) * k)
 					temp->group = k;
 				else
 					k++;
