@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 20:46:50 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 20:54:58 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	create_list_2(t_node *previous_element, t_node **new_element, char **argv, 
 	(*new_element)->previous = previous_element;
 }
 
-t_node	*create_list(int argc, char **argv)
+t_node	*create_list(int size, char **argv)
 {
 	t_node	*head;
 	t_node	*new_element;
@@ -67,7 +67,7 @@ t_node	*create_list(int argc, char **argv)
 	head->index = i + 1;
 	head->final = 1;
 	new_element = head;
-	while (argc > ++i)
+	while (size > ++i)
 	{
 		if (!make_malloc(new_element->next = malloc(sizeof(t_node))))
 		{

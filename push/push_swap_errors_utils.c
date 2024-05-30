@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 20:45:39 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 21:00:44 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,13 @@ void	check_overflow(char *argv, int i, int resu, char **ptr_argv)
 	}
 }
 
-int	*fill_int_table(int argc, char **argv)
+int	*fill_int_table(int size, char **argv)
 {
 	int	i;
 	int	*nbr_table;
 
 	i = 0;
-	nbr_table = malloc(sizeof(int) * argc);
+	nbr_table = malloc(sizeof(int) * size);
 	if (!nbr_table)
 		return (NULL);
 	while (argv[i])

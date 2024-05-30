@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 20:44:37 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 21:01:09 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,15 @@ typedef struct list
 
 char			**check_errors(int *argc, char **argv, char **list);
 void			check_params(int argc, char **argv);
-int				check_number(int argc, char **argv);
-void			check_long(int argc, char **argv);
-int				check_twice(int argc, char **argv);
+int				check_number(int size, char **argv);
+void			check_long(int size, char **argv);
+int				check_twice(int size, char **argv);
 
 int				ft_atoi(char *argv, char **ptr_argv);
 void			check_overflow(char *argv, int i, int resu, char **ptr_argv);
-int				*fill_int_table(int argc, char **argv);
+int				*fill_int_table(int size, char **argv);
 
-t_node			*create_list(int argc, char **argv);
+t_node			*create_list(int size, char **argv);
 void			create_list_2(t_node *previous_element, t_node **new_element, char **argv, int i);
 void			set_final(t_node *head);
 void			set_group(t_node *head);

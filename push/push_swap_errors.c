@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 18:34:15 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 20:58:29 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,13 @@ void	check_params(int argc, char **argv)
 		exit(EXIT_SUCCESS);
 }
 
-int	check_number(int argc, char **argv)
+int	check_number(int size, char **argv)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (i < argc)
+	while (i < size)
 	{
 		j = 0;
 		if (argv[i][j] == '-' || argv[i][j] == '+')
@@ -95,12 +95,12 @@ int	check_number(int argc, char **argv)
 	return (1);
 }
 
-void	check_long(int argc, char **argv)
+void	check_long(int size, char **argv)
 {
 	int	i;
 
 	i = 0;
-	(void)argc;
+	(void)size;
 	while (argv[i])
 	{
 		//printf("%s\n", argv[i]);
@@ -109,20 +109,20 @@ void	check_long(int argc, char **argv)
 	}
 }
 
-int	check_twice(int argc, char **argv)
+int	check_twice(int size, char **argv)
 {
 	int	*nbr_table;
 	int	i;
 	int	j;
 
 	i = 0;
-	nbr_table = fill_int_table(argc, argv);
+	nbr_table = fill_int_table(size, argv);
 	if (!nbr_table)
 		return (0);
-	while (i <= (argc - 2))
+	while (i <= (size - 2))
 	{
 		j = i + 1;
-		while (j <= (argc - 1))
+		while (j <= (size - 1))
 		{
 			if (nbr_table[i] == nbr_table[j])
 			{
