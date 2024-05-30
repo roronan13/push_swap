@@ -6,13 +6,13 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 22:52:42 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/23 15:41:13 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:15:19 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	rotate_a(node *head)
+void	rotate_a(t_node *head)
 {
 	rotate(head);
 	write(1, "ra\n", 3);

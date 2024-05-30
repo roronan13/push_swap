@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 00:17:31 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:43:52 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	node	*a_head;
-	node	*b_head;
+	/*t_node	*a_head;
+	t_node	*b_head;
 	char			**list;
 
 	if (!(list = check_errors(&argc, argv, NULL)))
@@ -42,26 +42,59 @@ int	main(int argc, char **argv)
 		sort_three(a_head);
 		sort_back(&a_head, &b_head);
 	}
-	allo_a(a_head);
-	allo_b(b_head);
+	//allo_a(a_head);
+	//allo_b(b_head);
 	clean(a_head);
 	//printf("CLEAN A FAIT\n");
 	clean(b_head);
 	//printf("CLEAN B FAIT\n");
-	return (0);
+	return (0);*/
+	t_node			*a_head;
+	t_node			*b_head;
+	char			**list;
+
+	if ((list = check_errors(&argc, argv, NULL)))
+	{
+		if ((a_head = create_list(argc, list)))
+		{
+			ft_free(list);
+			b_head = NULL;
+			set_final(a_head);
+			set_group(a_head);
+			if (is_sorted(a_head))
+			{
+				clean(a_head);
+				exit(EXIT_SUCCESS);
+			}
+			if (argc == 5)
+				sort_five(&a_head, &b_head);
+			else
+			{
+				sort(&a_head, &b_head);
+				sort_three(a_head);
+				sort_back(&a_head, &b_head);
+			}
+			clean(a_head);
+			clean(b_head);
+			return (0);
+		}
+		ft_free(list);
+		exit(EXIT_FAILURE);
+	}
+	exit(EXIT_FAILURE);
 }
 
-node	*create_list(int argc, char **argv)
+t_node	*create_list(int argc, char **argv)
 {
-	node	*head;
-	node	*new_element;
-	node	*previous_element;
+	t_node	*head;
+	t_node	*new_element;
+	t_node	*previous_element;
 	int				i;
 
 	i = 0;
-	if (!make_malloc(head = malloc(sizeof(node))))
+	if (!make_malloc(head = malloc(sizeof(t_node))))
 		return (NULL);
-	//head = malloc(sizeof(node));
+	//head = malloc(sizeof(t_node));
 	//if (!head)
 	//	return (NULL);
 	head->content = ft_atoi(argv[i], NULL);
@@ -70,7 +103,7 @@ node	*create_list(int argc, char **argv)
 	new_element = head;
 	while (argc > ++i)
 	{
-		if (!make_malloc(new_element->next = malloc(sizeof(node))))
+		if (!make_malloc(new_element->next = malloc(sizeof(t_node))))
 		{
 			clean(head);
 			return (NULL);
@@ -87,10 +120,10 @@ node	*create_list(int argc, char **argv)
 	return (head);
 }
 
-void	set_final(node *head)
+void	set_final(t_node *head)
 {
-	node	*temp_1;
-	node	*temp_2;
+	t_node	*temp_1;
+	t_node	*temp_2;
 
 	temp_1 = head;
 	while (temp_1->next != head)
@@ -108,9 +141,9 @@ void	set_final(node *head)
 	}
 }
 
-void	set_group(node *head)
+void	set_group(t_node *head)
 {
-	node	*temp;
+	t_node	*temp;
 	int				i;
 	int				k;
 
@@ -127,20 +160,29 @@ void	set_group(node *head)
 		k = 1;
 		while (temp->group == 0)
 		{
-			//if ((temp->final / (list_size(head) / 10)) < k)
-			if (temp->final < ((list_size(head) / 17) + 1) * k)
-				temp->group = k;
+			if (list_size(head) <= 100)
+			{
+				if (temp->final < ((list_size(head) / 5) + 1) * k)
+					temp->group = k;
+				else
+					k++;
+			}
 			else
-				k++;
+			{
+				if (temp->final < ((list_size(head) / 17) + 1) * k)
+					temp->group = k;
+				else
+					k++;
+			}
 		}
 		temp = temp->next;
 	}
 }
 
-void	clean(node *head)
+void	clean(t_node *head)
 {
-	node	*temp_first;
-	node	*temp_second;
+	t_node	*temp_first;
+	t_node	*temp_second;
 
 	if (!head)
 		return ;
@@ -160,9 +202,9 @@ void	clean(node *head)
 	head = NULL;
 }
 
-void	allo_a(node *head)
+void	allo_a(t_node *head)
 {
-	node	*temp;
+	t_node	*temp;
 	int				i;
 	int				j;
 
@@ -185,9 +227,9 @@ void	allo_a(node *head)
 	}
 }
 
-void	allo_b(node *head)
+void	allo_b(t_node *head)
 {
-	node	*temp;
+	t_node	*temp;
 	int				i;
 	int				j;
 

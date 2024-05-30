@@ -6,15 +6,15 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:28:25 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/23 15:43:45 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:15:19 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	list_size(node *head)
+int	list_size(t_node *head)
 {
-	node	*temp_ptr;
+	t_node	*temp_ptr;
 	int				i;
 
 	temp_ptr = head;
@@ -29,9 +29,9 @@ int	list_size(node *head)
 	return (i);
 }
 
-node	*find_min(node *head)
+t_node	*find_min(t_node *head)
 {
-	node	*temp;
+	t_node	*temp;
 	int				i;
 
 	temp = head->next;
@@ -47,10 +47,10 @@ node	*find_min(node *head)
 	return (temp);
 }
 
-int	is_sorted(node *head)
+int	is_sorted(t_node *head)
 {
-	node	*temp_1;
-	node	*temp_2;
+	t_node	*temp_1;
+	t_node	*temp_2;
 	int				first_content;
 
 	first_content = head->content;

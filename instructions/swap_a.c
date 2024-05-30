@@ -6,13 +6,13 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:43:27 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/23 15:42:22 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:15:19 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	swap_a(node *head)
+void	swap_a(t_node *head)
 {
 	swap(head);
 	write(1, "sa\n", 3);
