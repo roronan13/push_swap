@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 21:14:33 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 22:42:19 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ t_node	*create_list(int size, char **list)
 
 	i = 0;
 	previous_element = NULL;
-	if (!make_malloc(head = malloc(sizeof(t_node))))
+	head = malloc(sizeof(t_node));
+	if (!head)
 		return (NULL);
 	head->content = ft_atoi(list[i], NULL);
 	head->index = i + 1;
@@ -69,11 +70,9 @@ t_node	*create_list(int size, char **list)
 	new_element = head;
 	while (size > ++i)
 	{
-		if (!make_malloc(new_element->next = malloc(sizeof(t_node))))
-		{
-			clean(head);
-			return (NULL);
-		}
+		new_element->next = malloc(sizeof(t_node));
+		if (!new_element->next)
+			return (clean(head), NULL);
 		create_list_2(previous_element, &new_element, list, i);
 	}
 	new_element->next = head;
@@ -212,11 +211,4 @@ void	allo_b(t_node *head)
 		temp = temp->next;
 		j = temp->content;
 	}
-}
-
-void	*make_malloc(void *ptr)
-{
-	if (!ptr)
-		return (NULL);
-	return (ptr);
 }

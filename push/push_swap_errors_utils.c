@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 21:23:39 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 22:10:31 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ int	ft_atoi(char *list, char **ptr_list)
 		if (j > 1000000000 && list[i - 1] != '0')
 		{
 			write(2, "Error1\n", 7);
-			ft_free(ptr_list);
-			exit(EXIT_FAILURE);
+			exit((ft_free(ptr_list), EXIT_FAILURE));
 		}
 		if (j == 1000000000)
 			check_overflow(list, i, resu, ptr_list);

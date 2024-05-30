@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:28:25 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 20:46:57 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 23:09:07 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	list_size(t_node *head)
 
 	temp_ptr = head;
 	i = 1;
-	if(!head)
+	if (!head)
 		return (0);
 	while (temp_ptr->next != head)
 	{

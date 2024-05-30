@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 21:26:29 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/31 00:49:19 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct list
 }	t_node;
 
 char			**check_errors(int *argc, char **argv, char **list);
+int	check_errors_one_arg(char **first_list, char **argv, char ***list);
 void			check_params(int argc, char **argv);
 int				check_number(int size, char **list);
 void			check_long(int size, char **list);
@@ -44,7 +45,6 @@ void			set_final(t_node *head);
 void			set_group(t_node *head);
 void			set_group_2(t_node *head, t_node **temp, int *k);
 void			clean(t_node *head);
-void			*make_malloc(void *ptr);
 void			allo_a(t_node *head);
 void			allo_b(t_node *head);
 

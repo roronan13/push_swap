@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:55:14 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 20:41:02 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 22:42:42 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	push_a(t_node **a_head, t_node **b_head)
 void	new_a_list(t_node **a_head, t_node **b_head)
 {
 	*a_head = malloc(sizeof(t_node));
-	//if (!make_malloc(*a_head = malloc(sizeof(t_node))))
 	if (!*a_head)
 	{
 		clean(*b_head);
@@ -61,7 +60,6 @@ void	new_a_list(t_node **a_head, t_node **b_head)
 void	add_to_a_list(t_node **a_head, t_node **b_head, t_node **temp_ptr)
 {
 	*temp_ptr = malloc(sizeof(t_node));
-	//if (!make_malloc(*temp_ptr = malloc(sizeof(t_node))))
 	if (!*temp_ptr)
 	{
 		clean(*a_head);
@@ -81,5 +79,4 @@ void	add_to_a_list(t_node **a_head, t_node **b_head, t_node **temp_ptr)
 		(*a_head)->index = (*a_head)->index + 1;
 		*a_head = (*a_head)->next;
 	}
-	//*a_head = *temp_ptr;
 }
