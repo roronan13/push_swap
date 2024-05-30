@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 17:03:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 16:15:19 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 20:45:09 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	rev_rot_a_rev_rot_b(t_node *a_head, t_node *b_head)
 
 void	reverse_rotate(t_node *head)
 {
-	t_node	*temp_ptr;
+	t_node			*temp_ptr;
 	int				content_1;
 	int				content_2;
 	int				final_1;
@@ -49,7 +49,7 @@ void	reverse_rotate(t_node *head)
 
 void	reverse_rotate_group(t_node *head)
 {
-	t_node	*temp_ptr;
+	t_node			*temp_ptr;
 	int				group_1;
 	int				group_2;
 

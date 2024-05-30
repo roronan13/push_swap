@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 18:45:20 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 20:46:50 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(int argc, char **argv)
 	exit(EXIT_FAILURE);
 }
 
-void	creat_2(t_node *previous_element, t_node **new_element, char **argv, int i)
+void	create_list_2(t_node *previous_element, t_node **new_element, char **argv, int i)
 {
 	previous_element = *new_element;
 	*new_element = (*new_element)->next;
@@ -74,7 +74,7 @@ t_node	*create_list(int argc, char **argv)
 			clean(head);
 			return (NULL);
 		}
-		creat_2(previous_element, &new_element, argv, i);
+		create_list_2(previous_element, &new_element, argv, i);
 	}
 	new_element->next = head;
 	head->previous = new_element;
@@ -104,7 +104,7 @@ void	set_final(t_node *head)
 
 void	set_group(t_node *head)
 {
-	t_node	*temp;
+	t_node			*temp;
 	int				i;
 	int				k;
 
@@ -120,23 +120,26 @@ void	set_group(t_node *head)
 	{
 		k = 1;
 		while (temp->group == 0)
-		{
-			if (list_size(head) <= 100)
-			{
-				if (temp->final < ((list_size(head) / 7) + 1) * k)
-					temp->group = k;
-				else
-					k++;
-			}
-			else
-			{
-				if (temp->final < ((list_size(head) / 17) + 1) * k)
-					temp->group = k;
-				else
-					k++;
-			}
-		}
+			set_group_2(head, &temp, &k);
 		temp = temp->next;
+	}
+}
+
+void	set_group_2(t_node *head, t_node **temp, int *k)
+{
+	if (list_size(head) <= 100)
+	{
+		if ((*temp)->final < ((list_size(head) / 7) + 1) * *k)
+			(*temp)->group = *k;
+		else
+			(*k)++;
+	}
+	else
+	{
+		if ((*temp)->final < ((list_size(head) / 17) + 1) * *k)
+			(*temp)->group = *k;
+		else
+			(*k)++;
 	}
 }
 
@@ -165,7 +168,7 @@ void	clean(t_node *head)
 
 void	allo_a(t_node *head)
 {
-	t_node	*temp;
+	t_node			*temp;
 	int				i;
 	int				j;
 
@@ -190,7 +193,7 @@ void	allo_a(t_node *head)
 
 void	allo_b(t_node *head)
 {
-	t_node	*temp;
+	t_node			*temp;
 	int				i;
 	int				j;
 

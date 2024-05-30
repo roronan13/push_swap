@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 16:32:12 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 16:15:19 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 20:45:14 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	swap(t_node *head)
 	int				temp_content;
 	int				temp_final;
 	int				temp_group;
-	t_node	*temp_ptr;
+	t_node			*temp_ptr;
 
 	if (!head || head->next == head)
 		return ;

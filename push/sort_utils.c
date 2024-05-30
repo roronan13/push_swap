@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:28:25 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 16:15:19 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 20:46:57 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	list_size(t_node *head)
 {
-	t_node	*temp_ptr;
+	t_node			*temp_ptr;
 	int				i;
 
 	temp_ptr = head;
@@ -31,7 +31,7 @@ int	list_size(t_node *head)
 
 t_node	*find_min(t_node *head)
 {
-	t_node	*temp;
+	t_node			*temp;
 	int				i;
 
 	temp = head->next;

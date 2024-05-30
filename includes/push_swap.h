@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 18:21:09 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 20:44:37 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,42 +34,38 @@ int				check_number(int argc, char **argv);
 void			check_long(int argc, char **argv);
 int				check_twice(int argc, char **argv);
 
-
 int				ft_atoi(char *argv, char **ptr_argv);
 void			check_overflow(char *argv, int i, int resu, char **ptr_argv);
 int				*fill_int_table(int argc, char **argv);
 
-
-t_node	*create_list(int argc, char **argv);
-void	creat_2(t_node *previous_element, t_node **new_element, char **argv, int i);
+t_node			*create_list(int argc, char **argv);
+void			create_list_2(t_node *previous_element, t_node **new_element, char **argv, int i);
 void			set_final(t_node *head);
 void			set_group(t_node *head);
+void			set_group_2(t_node *head, t_node **temp, int *k);
 void			clean(t_node *head);
 void			*make_malloc(void *ptr);
 void			allo_a(t_node *head);
 void			allo_b(t_node *head);
 
-
 void			sort(t_node **a_head, t_node **b_head);
 void			sort_back(t_node **a_head, t_node **b_head);
 void			sort_three(t_node *a_head);
-void	sort_five(t_node **a_head, t_node **b_head);
-
+void			sort_five(t_node **a_head, t_node **b_head);
 
 int				list_size(t_node *head);
-t_node	*find_min(t_node *head);
+t_node			*find_min(t_node *head);
 int				is_sorted(t_node *head);
 
-char	**ft_split(char const *s, char c);
-char	*ft_strtrim(char const *s1, char const *set);
-int	tab_size(char **tab);
-char	*ft_strdup(const char *s);
-char	**ft_free(char **ptr);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-size_t	ft_strlen(const char *s);
-char	*ft_strchr(const char *s, int c);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-
+char			**ft_split(char const *s, char c);
+char			*ft_strtrim(char const *s1, char const *set);
+int				tab_size(char **tab);
+char			*ft_strdup(const char *s);
+char			**ft_free(char **ptr);
+void			*ft_memcpy(void *dest, const void *src, size_t n);
+size_t			ft_strlen(const char *s);
+char			*ft_strchr(const char *s, int c);
+size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 void			swap_a(t_node *head);
 void			swap_b(t_node *head);
@@ -92,7 +88,6 @@ void			rev_rot_a_rev_rot_b(t_node *a_head, t_node *b_head);
 void			reverse_rotate(t_node *head);
 void			reverse_rotate_group(t_node *head);
 
-
-t_node	*ft_lst_last(t_node *head);
+t_node			*ft_lst_last(t_node *head);
 
 #endif

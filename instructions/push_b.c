@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 00:51:55 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 18:52:05 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 20:42:31 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ void	push_b(t_node **a_head, t_node **b_head)
 	if ((*a_head)->next == *a_head)
 	{
 		free(*a_head);
-		*a_head = NULL;
-		write(1, "pb\n", 3);
+		write((*a_head = NULL, 1), "pb\n", 3);
 		return ;
 	}
 	temp_ptr = (*a_head)->next;
@@ -37,16 +36,16 @@ void	push_b(t_node **a_head, t_node **b_head)
 	}
 	(*a_head)->previous->next = (*a_head)->next;
 	(*a_head)->next->previous = (*a_head)->previous;
-	temp_ptr = *a_head;
-	*a_head = (*a_head)->next;
-	free(temp_ptr);
+	free((temp_ptr = *a_head, *a_head = (*a_head)->next, temp_ptr));
 	temp_ptr = NULL;
 	write(1, "pb\n", 3);
 }
 
 void	new_b_list(t_node **a_head, t_node **b_head)
 {
-	if (!make_malloc(*b_head = malloc(sizeof(t_node))))
+	*b_head = malloc(sizeof(t_node));
+	//if (!make_malloc(*b_head = malloc(sizeof(t_node))))
+	if (!*b_head)
 	{
 		clean(*a_head);
 		exit(EXIT_FAILURE);
@@ -61,7 +60,9 @@ void	new_b_list(t_node **a_head, t_node **b_head)
 
 void	add_to_b_list(t_node **a_head, t_node **b_head, t_node **temp_ptr)
 {
-	if (!make_malloc(*temp_ptr = malloc(sizeof(t_node))))
+	*temp_ptr = malloc(sizeof(t_node));
+	//if (!make_malloc(*temp_ptr = malloc(sizeof(t_node))))
+	if (!*temp_ptr)
 	{
 		clean(*a_head);
 		clean(*b_head);
