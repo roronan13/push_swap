@@ -6,13 +6,13 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 21:00:44 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 21:23:39 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_atoi(char *argv, char **ptr_argv)
+int	ft_atoi(char *list, char **ptr_list)
 {
 	int			i;
 	long long	j;
@@ -21,49 +21,49 @@ int	ft_atoi(char *argv, char **ptr_argv)
 	i = 0;
 	j = 1;
 	resu = 0;
-	while (argv[i])
+	while (list[i])
 		i++;
-	while (i - 1 >= 0 && argv[i - 1] >= 48 && argv[i - 1] <= 57)
+	while (i - 1 >= 0 && list[i - 1] >= 48 && list[i - 1] <= 57)
 	{
-		if (j > 1000000000 && argv[i - 1] != '0')
+		if (j > 1000000000 && list[i - 1] != '0')
 		{
 			write(2, "Error1\n", 7);
-			ft_free(ptr_argv);
+			ft_free(ptr_list);
 			exit(EXIT_FAILURE);
 		}
 		if (j == 1000000000)
-			check_overflow(argv, i, resu, ptr_argv);
-		resu += (argv[i - 1] - 48) * j;
+			check_overflow(list, i, resu, ptr_list);
+		resu += (list[i - 1] - 48) * j;
 		j *= 10;
 		i--;
 	}
-	if (argv[0] == '-')
+	if (list[0] == '-')
 		return (-resu);
 	return (resu);
 }
 
-void	check_overflow(char *argv, int i, int resu, char **ptr_argv)
+void	check_overflow(char *list, int i, int resu, char **ptr_list)
 {
-	if (argv[0] == '-')
+	if (list[0] == '-')
 	{
-		if (((argv[i - 1] - 48) == 2 && resu > 147483648)
-			|| (argv[i - 1] - 48) > 2)
+		if (((list[i - 1] - 48) == 2 && resu > 147483648)
+			|| (list[i - 1] - 48) > 2)
 		{
 			write(2, "Error2\n", 7);
-			ft_free(ptr_argv);
+			ft_free(ptr_list);
 			exit(EXIT_FAILURE);
 		}
 	}
-	else if (((argv[i - 1] - 48) == 2 && resu > 147483647)
-		|| argv[i - 1] - 48 > 2)
+	else if (((list[i - 1] - 48) == 2 && resu > 147483647)
+		|| list[i - 1] - 48 > 2)
 	{
 		write(2, "Error3\n", 7);
-		ft_free(ptr_argv);
+		ft_free(ptr_list);
 		exit(EXIT_FAILURE);
 	}
 }
 
-int	*fill_int_table(int size, char **argv)
+int	*fill_int_table(int size, char **list)
 {
 	int	i;
 	int	*nbr_table;
@@ -72,9 +72,9 @@ int	*fill_int_table(int size, char **argv)
 	nbr_table = malloc(sizeof(int) * size);
 	if (!nbr_table)
 		return (NULL);
-	while (argv[i])
+	while (list[i])
 	{
-		nbr_table[i] = ft_atoi(argv[i], NULL);
+		nbr_table[i] = ft_atoi(list[i], NULL);
 		i++;
 	}
 	return (nbr_table);

@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 20:54:58 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 21:14:33 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,17 @@ int	main(int argc, char **argv)
 	exit(EXIT_FAILURE);
 }
 
-void	create_list_2(t_node *previous_element, t_node **new_element, char **argv, int i)
+void	create_list_2(t_node *previous_element, t_node **new_element, char **list, int i)
 {
 	previous_element = *new_element;
 	*new_element = (*new_element)->next;
-	(*new_element)->content = ft_atoi(argv[i], NULL);
+	(*new_element)->content = ft_atoi(list[i], NULL);
 	(*new_element)->index = i + 1;
 	(*new_element)->final = 1;
 	(*new_element)->previous = previous_element;
 }
 
-t_node	*create_list(int size, char **argv)
+t_node	*create_list(int size, char **list)
 {
 	t_node	*head;
 	t_node	*new_element;
@@ -63,7 +63,7 @@ t_node	*create_list(int size, char **argv)
 	previous_element = NULL;
 	if (!make_malloc(head = malloc(sizeof(t_node))))
 		return (NULL);
-	head->content = ft_atoi(argv[i], NULL);
+	head->content = ft_atoi(list[i], NULL);
 	head->index = i + 1;
 	head->final = 1;
 	new_element = head;
@@ -74,7 +74,7 @@ t_node	*create_list(int size, char **argv)
 			clean(head);
 			return (NULL);
 		}
-		create_list_2(previous_element, &new_element, argv, i);
+		create_list_2(previous_element, &new_element, list, i);
 	}
 	new_element->next = head;
 	head->previous = new_element;

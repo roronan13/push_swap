@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 20:58:29 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/30 21:18:00 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	check_params(int argc, char **argv)
 		exit(EXIT_SUCCESS);
 }
 
-int	check_number(int size, char **argv)
+int	check_number(int size, char **list)
 {
 	int	i;
 	int	j;
@@ -77,11 +77,11 @@ int	check_number(int size, char **argv)
 	while (i < size)
 	{
 		j = 0;
-		if (argv[i][j] == '-' || argv[i][j] == '+')
+		if (list[i][j] == '-' || list[i][j] == '+')
 			j++;
-		while (argv[i][j])
+		while (list[i][j])
 		{
-			if (argv[i][j] >= 48 && argv[i][j] <= 57)
+			if (list[i][j] >= 48 && list[i][j] <= 57)
 				j++;
 			else
 			{
@@ -95,28 +95,28 @@ int	check_number(int size, char **argv)
 	return (1);
 }
 
-void	check_long(int size, char **argv)
+void	check_long(int size, char **list)
 {
 	int	i;
 
 	i = 0;
 	(void)size;
-	while (argv[i])
+	while (list[i])
 	{
 		//printf("%s\n", argv[i]);
-		ft_atoi(argv[i], argv);
+		ft_atoi(list[i], list);
 		i++;
 	}
 }
 
-int	check_twice(int size, char **argv)
+int	check_twice(int size, char **list)
 {
 	int	*nbr_table;
 	int	i;
 	int	j;
 
 	i = 0;
-	nbr_table = fill_int_table(size, argv);
+	nbr_table = fill_int_table(size, list);
 	if (!nbr_table)
 		return (0);
 	while (i <= (size - 2))
