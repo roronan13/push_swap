@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/31 01:25:57 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/31 03:31:22 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,15 @@ int	main(int argc, char **argv)
 	t_node			*b_head;
 	char			**list;
 
-	if ((list = check_errors(&argc, argv, NULL)))
+	list = check_errors(&argc, argv, NULL);
+	if (list)
 	{
-		if ((a_head = create_list(argc, list)))
+		a_head = create_list(argc, list);
+		if (a_head)
 		{
 			ft_free(list);
 			b_head = NULL;
-			set_final(a_head);
-			set_group(a_head);
+			set_group((set_final(a_head), a_head));
 			if (is_sorted(a_head))
 				exit((clean(a_head), EXIT_SUCCESS));
 			if (argc == 5)
