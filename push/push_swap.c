@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/31 19:25:03 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/31 19:48:20 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ int	main(int argc, char **argv)
 			else
 				sort_back((sort(&a_head, &b_head), sort_three(a_head), \
 				&a_head), &b_head);
-			allo_a(a_head);
-			allo_b(b_head);
 			return (clean(a_head), clean(b_head), 0);
 		}
 		exit((ft_free(list), EXIT_FAILURE));
@@ -164,52 +162,4 @@ void	clean(t_node *head)
 	temp_first = NULL;
 	temp_second = NULL;
 	head = NULL;
-}
-
-void	allo_a(t_node *head)
-{
-	t_node			*temp;
-	int				i;
-	int				j;
-
-	if (!head)
-	{
-		printf("-- LA PILE A EST VIDE --\n");
-		return ;
-	}
-	temp = head;
-	i = temp->content;
-	//printf("i = %d\n", i);
-	j = i + 1;
-	printf("      -- PILE A --\n");
-	while (j != i)
-	{
-		printf("%d / index = %d / final = %d / groupe = %d\n", temp->content, temp->index, temp->final, temp->group);
-		temp = temp->next;
-		j = temp->content;
-		//printf("j = %d\n", j);
-	}
-}
-
-void	allo_b(t_node *head)
-{
-	t_node			*temp;
-	int				i;
-	int				j;
-
-	if (!head)
-	{
-		printf("-- LA PILE B EST VIDE --\n");
-		return ;
-	}
-	temp = head;
-	i = temp->content;
-	j = i + 1;
-	printf("      -- PILE B --\n");
-	while (j != i)
-	{
-		printf("%d / index = %d / final = %d / groupe = %d\n", temp->content, temp->index, temp->final, temp->group);
-		temp = temp->next;
-		j = temp->content;
-	}
 }

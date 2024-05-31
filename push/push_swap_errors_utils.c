@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 22:10:31 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/31 19:56:22 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_atoi(char *list, char **ptr_list)
 	{
 		if (j > 1000000000 && list[i - 1] != '0')
 		{
-			write(2, "Error1\n", 7);
+			write(2, "Error\n", 6);
 			exit((ft_free(ptr_list), EXIT_FAILURE));
 		}
 		if (j == 1000000000)
@@ -48,7 +48,7 @@ void	check_overflow(char *list, int i, int resu, char **ptr_list)
 		if (((list[i - 1] - 48) == 2 && resu > 147483648)
 			|| (list[i - 1] - 48) > 2)
 		{
-			write(2, "Error2\n", 7);
+			write(2, "Error\n", 6);
 			ft_free(ptr_list);
 			exit(EXIT_FAILURE);
 		}
@@ -56,7 +56,7 @@ void	check_overflow(char *list, int i, int resu, char **ptr_list)
 	else if (((list[i - 1] - 48) == 2 && resu > 147483647)
 		|| list[i - 1] - 48 > 2)
 	{
-		write(2, "Error3\n", 7);
+		write(2, "Error\n", 6);
 		ft_free(ptr_list);
 		exit(EXIT_FAILURE);
 	}
@@ -129,13 +129,10 @@ char	*ft_strdup(const char *s)
 	size_t	a;
 
 	a = ft_strlen(s);
-	//ptr = malloc(sizeof(char) * a + 1);
 	ptr = malloc(sizeof(char) * (a + 1));
 	if (!ptr)
 		return (NULL);
-	//printf("ptr 1 : %s\n", ptr);
 	ft_memcpy(ptr, s, a + 1);
-	//printf("ptr 2 : %s\n", ptr);
 	return (ptr);
 }
 

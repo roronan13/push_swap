@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/31 03:02:02 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/31 19:55:50 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	check_number(int size, char **list)
 				j++;
 			else
 			{
-				write(2, "Error5\n", 7);
+				write(2, "Error\n", 6);
 				return (0);
 			}
 		}
@@ -129,7 +129,7 @@ int	check_twice(int size, char **list)
 		{
 			if (nbr_table[i] == nbr_table[j])
 			{
-				write(2, "Error6\n", 7);
+				write(2, "Error\n", 6);
 				free(nbr_table);
 				return (0);
 			}

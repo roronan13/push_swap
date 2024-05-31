@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/31 18:52:36 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/31 19:55:25 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <limits.h>
-# include <stdio.h>
 
 typedef struct list
 {
@@ -50,12 +48,12 @@ void			allo_a(t_node *head);
 void			allo_b(t_node *head);
 
 void			sort(t_node **a_head, t_node **b_head);
-void	sort_3(t_node **ptr, t_node ***a_head);
-void	sort_4(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr);
-void	sort_5(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr);
-void	sort_6(t_node **ptr, int *i);
-void	sort_1(t_node ***a_head, t_node ***b_head, int size, int nth_group);
-void	sort_2(int *current, t_node **ptr, t_node ****a_head);
+void			sort_3(t_node **ptr, t_node ***a_head);
+void			sort_4(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr);
+void			sort_5(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr);
+void			sort_6(t_node **ptr, int *i);
+void			sort_1(t_node ***a_head, t_node ***b_head, int size, int nth_group);
+void			sort_2(int *current, t_node **ptr, t_node ****a_head);
 void			sort_back(t_node **a_head, t_node **b_head);
 void			sort_three(t_node *a_head);
 void			sort_five(t_node **a_head, t_node **b_head);
