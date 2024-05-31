@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/31 02:52:22 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/31 03:02:02 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,39 +15,17 @@
 char	**check_errors(int *argc, char **argv, char **list)
 {
 	char	*first_list;
-	/* int		i;
 	
-	i = 0; */
 	check_params(*argc, argv);
 	if (*argc == 2)
 	{
 		if (!check_errors_one_arg(&first_list, argv, &list))
 			return (NULL);
-
-		/* first_list = ft_strtrim(argv[1], "\"");
-		if (!first_list)
-			return (NULL);
-		list = ft_split(first_list, ' ');	
-		if (!list)
-			return (free(first_list), NULL);
-		free(first_list); */
 	}
 	else
 	{
 		if (!check_errors_more_args(&list, argv, argc))
 			return (NULL);
-		
-		/* list = malloc(sizeof(char*) * *argc);
-		if (!list)
-			return (NULL);
-		while (argv[i + 1])
-		{
-			list[i] = ft_strdup(argv[i + 1]);
-			if (!list[i])
-				return (ft_free(list), NULL);
-			i++;
-		}
-		list[i] = NULL; */
 	}
 	*argc = tab_size(list);
 	if (!check_number(*argc, list))
@@ -80,12 +58,12 @@ int	check_errors_more_args(char ***list, char **argv, int *argc)
 		return (0);
 	while (argv[i + 1])
 	{
-		*list[i] = ft_strdup(argv[i + 1]);
-		if (!*list[i])
+		(*list)[i] = ft_strdup(argv[i + 1]);
+		if (!(*list)[i])
 			return (ft_free(*list), 0);
 		i++;
 	}
-	*list[i] = NULL;
+	(*list)[i] = NULL;
 	return (1);
 }
 
