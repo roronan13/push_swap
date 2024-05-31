@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/31 15:58:51 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/31 18:20:18 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 void	sort(t_node **a_head, t_node **b_head)
 {
 	int				nth_group;
-	t_node			*ptr;
-	int				i;
+	//t_node			*ptr;
+	//int				i;
 	int				size;
-	int				current;
+	//int				current;
 
 	nth_group = 1;
 	size = list_size(*a_head);
 	while (list_size(*a_head) > 3)
 	{
-		i = -1;
+		sort_6(&a_head, &b_head, size, &nth_group);
+		/* i = -1;
 		ptr = *a_head;
 		while ((++i <= list_size(*a_head)) && list_size(*a_head) > 3)
 		{
@@ -47,8 +48,40 @@ void	sort(t_node **a_head, t_node **b_head)
 			else
 				ptr = ptr->next;
 		}
-		nth_group = nth_group + 2;
+		nth_group = nth_group + 2; */
 	}
+}
+
+void	sort_6(t_node ***a_head, t_node ***b_head, int size, int *nth_group)
+{
+	int		i;
+	t_node	*ptr;
+	int		current;
+	
+	i = -1;
+	ptr = **a_head;
+	while ((++i <= list_size(**a_head)) && list_size(**a_head) > 3)
+	{
+		if ((ptr->group == *nth_group || ptr->group == *nth_group + 1) 
+			&& ptr->final <= size - 3)
+		{
+			current = ptr->content;
+			while ((**a_head)->content != current)
+				sort_2(&ptr, a_head);
+			if ((**a_head)->final <= size - 3)
+			{
+				if ((**a_head)->group == *nth_group)
+					sort_3(&i, a_head, b_head, &ptr);
+				else if ((**a_head)->group == *nth_group + 1)
+					sort_4(&i, a_head, b_head, &ptr);
+			}
+			else
+				sort_5(&ptr, &i);
+		}
+		else
+			ptr = ptr->next;
+	}
+	*nth_group = *nth_group + 2;
 }
 
 void	sort_2(t_node **ptr, t_node ***a_head)
