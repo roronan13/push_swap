@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/31 03:58:57 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:00:52 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int	main(int argc, char **argv)
 			else
 				sort_back((sort(&a_head, &b_head), sort_three(a_head), \
 				&a_head), &b_head);
+			allo_a(a_head);
+			allo_b(b_head);
 			return (clean(a_head), clean(b_head), 0);
 		}
 		exit((ft_free(list), EXIT_FAILURE));

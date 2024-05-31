@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 20:47:05 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/31 15:58:51 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,41 +28,54 @@ void	sort(t_node **a_head, t_node **b_head)
 		ptr = *a_head;
 		while ((++i <= list_size(*a_head)) && list_size(*a_head) > 3)
 		{
-			if ((ptr->group == nth_group || ptr->group == nth_group + 1) && ptr->final <= size - 3)
+			if ((ptr->group == nth_group || ptr->group == nth_group + 1) 
+				&& ptr->final <= size - 3)
 			{
 				current = ptr->content;
-				while ((*a_head)->content != current /*&& ptr->final <= size - 3*/)
-				{
-					if (ptr->index <= (list_size(*a_head) / 2) + 1)
-						rotate_a(*a_head);
-					else
-						reverse_rotate_a(*a_head);
-				}
+				while ((*a_head)->content != current)
+					sort_2(&ptr, &a_head);
 				if ((*a_head)->final <= size - 3)
 				{
 					if ((*a_head)->group == nth_group)
-					{
-						push_b((i = -1, a_head), b_head);
-						ptr = *a_head;
-					}
+						sort_3(&i, &a_head, &b_head, &ptr);
 					else if ((*a_head)->group == nth_group + 1)
-					{
-						push_b((i = -1, a_head), b_head);
-						rotate_b(*b_head);
-						ptr = *a_head;
-					}
+						sort_4(&i, &a_head, &b_head, &ptr);
 				}
 				else
-				{
-					ptr = ptr->next;
-					i = -1;
-				}
+					sort_5(&ptr, &i);
 			}
 			else
 				ptr = ptr->next;
 		}
 		nth_group = nth_group + 2;
 	}
+}
+
+void	sort_2(t_node **ptr, t_node ***a_head)
+{
+	if ((*ptr)->index <= (list_size(**a_head) / 2) + 1)
+		rotate_a(**a_head);
+	else
+		reverse_rotate_a(**a_head);
+}
+
+void	sort_3(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr)
+{
+	push_b((*i = -1, *a_head), *b_head);
+	*ptr = **a_head;
+}
+
+void	sort_4(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr)
+{
+	push_b((*i = -1, *a_head), *b_head);
+	rotate_b(**b_head);
+	*ptr = **a_head;
+}
+
+void	sort_5(t_node **ptr, int *i)
+{
+	*ptr = (*ptr)->next;
+	*i = -1;
 }
 
 void	sort_three(t_node *a_head)

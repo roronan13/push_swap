@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/31 03:03:40 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/31 15:57:57 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ void			allo_a(t_node *head);
 void			allo_b(t_node *head);
 
 void			sort(t_node **a_head, t_node **b_head);
+void	sort_2(t_node **ptr, t_node ***a_head);
+void	sort_3(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr);
+void	sort_4(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr);
+void	sort_5(t_node **ptr, int *i);
 void			sort_back(t_node **a_head, t_node **b_head);
 void			sort_three(t_node *a_head);
 void			sort_five(t_node **a_head, t_node **b_head);
