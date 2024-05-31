@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/31 19:48:20 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/31 20:11:54 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	list = check_errors(&argc, argv, NULL);
 	if (list)
 	{
-		a_head = create_list(argc, list);
+		a_head = create(argc, list);
 		if (a_head)
 		{
 			ft_free(list);
@@ -41,17 +41,17 @@ int	main(int argc, char **argv)
 	exit(EXIT_FAILURE);
 }
 
-void	create_list_2(t_node *previous_element, t_node **new_element, char **list, int i)
+void	create_list_2(t_node *prev_elem, t_node **new_elem, char **list, int i)
 {
-	previous_element = *new_element;
-	*new_element = (*new_element)->next;
-	(*new_element)->content = ft_atoi(list[i], NULL);
-	(*new_element)->index = i + 1;
-	(*new_element)->final = 1;
-	(*new_element)->previous = previous_element;
+	prev_elem = *new_elem;
+	*new_elem = (*new_elem)->next;
+	(*new_elem)->content = ft_atoi(list[i], NULL);
+	(*new_elem)->index = i + 1;
+	(*new_elem)->final = 1;
+	(*new_elem)->previous = prev_elem;
 }
 
-t_node	*create_list(int size, char **list)
+t_node	*create(int size, char **list)
 {
 	t_node	*head;
 	t_node	*new_element;
@@ -72,7 +72,7 @@ t_node	*create_list(int size, char **list)
 		new_element->next = malloc(sizeof(t_node));
 		if (!new_element->next)
 			return (clean(head), NULL);
-		create_list_2(previous_element, &new_element, list, i);
+		create_2(previous_element, &new_element, list, i);
 	}
 	new_element->next = head;
 	head->previous = new_element;

@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/31 19:55:50 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/31 20:07:18 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	**check_errors(int *argc, char **argv, char **list)
 	check_params(*argc, argv);
 	if (*argc == 2)
 	{
-		if (!check_errors_one_arg(&first_list, argv, &list))
+		if (!check_err_one_arg(&first_list, argv, &list))
 			return (NULL);
 	}
 	else
@@ -36,7 +36,7 @@ char	**check_errors(int *argc, char **argv, char **list)
 	return (list);
 }
 
-int	check_errors_one_arg(char **first_list, char **argv, char ***list)
+int	check_err_one_arg(char **first_list, char **argv, char ***list)
 {
 	*first_list = ft_strtrim(argv[1], "\"");
 	if (!*first_list)

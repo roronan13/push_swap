@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/31 19:55:25 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/05/31 20:11:38 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct list
 }	t_node;
 
 char			**check_errors(int *argc, char **argv, char **list);
-int				check_errors_one_arg(char **first_list, char **argv, char ***list);
+int				check_err_one_arg(char **first_list, char **argv, char ***list);
 int				check_errors_more_args(char ***list, char **argv, int *argc);
 void			check_params(int argc, char **argv);
 int				check_number(int size, char **list);
@@ -38,8 +38,8 @@ int				ft_atoi(char *list, char **ptr_list);
 void			check_overflow(char *list, int i, int resu, char **ptr_list);
 int				*fill_int_table(int size, char **list);
 
-t_node			*create_list(int size, char **list);
-void			create_list_2(t_node *previous_element, t_node **new_element, char **list, int i);
+t_node			*create(int size, char **list);
+void			create_2(t_node *prev_ele, t_node **new_ele, char **list, int i);
 void			set_final(t_node *head);
 void			set_group(t_node *head);
 void			set_group_2(t_node *head, t_node **temp, int *k);
