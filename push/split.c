@@ -6,13 +6,13 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 13:57:26 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 22:06:45 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/06/04 17:56:01 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static size_t	ft_count(char const *s, char c)
+size_t	ft_count(char const *s, char c)
 {
 	long unsigned int	i;
 	size_t				j;
@@ -32,7 +32,7 @@ static size_t	ft_count(char const *s, char c)
 	return (j);
 }
 
-static char	*ft_fill(const char *s, char c, size_t j)
+char	*ft_fill(const char *s, char c, size_t j)
 {
 	char		*ptr;
 	const char	*ptr2;
