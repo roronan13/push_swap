@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/06/04 16:37:17 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:48:10 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,6 @@ int	main(int argc, char **argv)
 	exit(EXIT_FAILURE);
 }
 
-void	crea_2(t_node *prev_ele, t_node **new_ele, char **list, int i)
-{
-	prev_ele = *new_ele;
-	*new_ele = (*new_ele)->next;
-	(*new_ele)->content = ft_atoi(list[i], NULL);
-	(*new_ele)->index = i + 1;
-	(*new_ele)->final = 1;
-	(*new_ele)->previous = prev_ele;
-}
-
 t_node	*create(int size, char **list)
 {
 	t_node	*head;
@@ -79,66 +69,14 @@ t_node	*create(int size, char **list)
 	return (head);
 }
 
-void	set_final(t_node *head)
+void	crea_2(t_node *prev_ele, t_node **new_ele, char **list, int i)
 {
-	t_node	*temp_1;
-	t_node	*temp_2;
-
-	temp_1 = head;
-	while (temp_1->next != head)
-	{
-		temp_2 = temp_1->next;
-		while (temp_2 != head)
-		{
-			if (temp_1->content < temp_2->content)
-				temp_2->final = temp_2->final + 1;
-			else
-				temp_1->final = temp_1->final + 1;
-			temp_2 = temp_2->next;
-		}
-		temp_1 = temp_1->next;
-	}
-}
-
-void	set_group(t_node *head)
-{
-	t_node			*temp;
-	int				i;
-	int				k;
-
-	temp = head;
-	i = 0;
-	while (i++ < list_size(head))
-	{
-		temp->group = 0;
-		temp = temp->next;
-	}
-	i = 0;
-	while (i++ < list_size(head))
-	{
-		k = 1;
-		while (temp->group == 0)
-			set_group_2(head, &temp, &k);
-		temp = temp->next;
-	}
-}
-
-void	set_group_2(t_node *head, t_node **temp, int *k)
-{
-	if (list_size(head) <= 100)
-	{
-		if ((*temp)->final < ((list_size(head) / 7) + 1) * *k)
-			(*temp)->group = *k;
-		else
-			(*k)++;
-	}
-	else
-	{
-		if ((*temp)->final < ((list_size(head) / 17) + 1) * *k)
-			(*temp)->group = *k;
-		else
-			(*k)++;
-	}
+	prev_ele = *new_ele;
+	*new_ele = (*new_ele)->next;
+	(*new_ele)->content = ft_atoi(list[i], NULL);
+	(*new_ele)->index = i + 1;
+	(*new_ele)->final = 1;
+	(*new_ele)->previous = prev_ele;
 }
 
 void	clean(t_node *head)
@@ -155,7 +93,7 @@ void	clean(t_node *head)
 		free(temp_first);
 		temp_first = temp_second;
 		if (!temp_second)
-			break;
+			break ;
 		temp_second = temp_second->next;
 	}
 	free(temp_first);

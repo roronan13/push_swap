@@ -6,11 +6,26 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/06/04 16:41:08 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/06/04 17:13:00 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	sort_five(t_node **a_head, t_node **b_head)
+{
+	while (list_size(*a_head) > 3)
+	{
+		while ((*a_head)->final != 1 && (*a_head)->final != 2)
+			rotate_a(*a_head);
+		push_b(a_head, b_head);
+	}
+	sort_three(*a_head);
+	push_a(a_head, b_head);
+	push_a(a_head, b_head);
+	if ((*a_head)->content > (*a_head)->next->content)
+		swap_a(*a_head);
+}
 
 void	sort(t_node **a_head, t_node **b_head)
 {
@@ -53,40 +68,6 @@ void	s_1(t_node ***a_head, t_node ***b_head, int size, int nth_group)
 		else
 			ptr = ptr->next;
 	}
-}
-
-void	sort_3(t_node **ptr, t_node ***a_head)
-{
-	if ((*ptr)->index <= (list_size(**a_head) / 2) + 1)
-		rotate_a(**a_head);
-	else
-		reverse_rotate_a(**a_head);
-}
-
-void	s_4(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr)
-{
-	push_b((*i = -1, *a_head), *b_head);
-	*ptr = **a_head;
-}
-
-void	s_5(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr)
-{
-	push_b((*i = -1, *a_head), *b_head);
-	rotate_b(**b_head);
-	*ptr = **a_head;
-}
-
-void	sort_6(t_node **ptr, int *i)
-{
-	*ptr = (*ptr)->next;
-	*i = -1;
-}
-
-void	sort_2(int *current, t_node **ptr, t_node ****a_head)
-{
-	*current = (*ptr)->content;
-	while ((***a_head)->content != *current)
-		sort_3(ptr, *a_head);
 }
 
 void	sort_three(t_node *a_head)
@@ -136,19 +117,4 @@ void	sort_back(t_node **a_head, t_node **b_head)
 		if ((*a_head)->next && (*a_head)->content > (*a_head)->next->content)
 			swap_a(*a_head);
 	}
-}
-
-void	sort_five(t_node **a_head, t_node **b_head)
-{
-	while (list_size(*a_head) > 3)
-	{
-		while ((*a_head)->final != 1 && (*a_head)->final != 2)
-			rotate_a(*a_head);
-		push_b(a_head, b_head);
-	}
-	sort_three(*a_head);
-	push_a(a_head, b_head);
-	push_a(a_head, b_head);
-	if ((*a_head)->content > (*a_head)->next->content)
-		swap_a(*a_head);
 }

@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:11:22 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/31 20:07:18 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:53:32 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	**check_errors(int *argc, char **argv, char **list)
 {
 	char	*first_list;
-	
+
 	check_params(*argc, argv);
 	if (*argc == 2)
 	{
@@ -34,37 +34,6 @@ char	**check_errors(int *argc, char **argv, char **list)
 	if (!check_twice(*argc, list))
 		return (ft_free(list), NULL);
 	return (list);
-}
-
-int	check_err_one_arg(char **first_list, char **argv, char ***list)
-{
-	*first_list = ft_strtrim(argv[1], "\"");
-	if (!*first_list)
-		return (0);
-	*list = ft_split(*first_list, ' ');
-	if (!*list)
-		return (free(*first_list), 0);
-	free(*first_list);
-	return (1);
-}
-
-int	check_errors_more_args(char ***list, char **argv, int *argc)
-{
-	int	i;
-
-	i = 0;
-	*list = malloc(sizeof(char*) * *argc);
-	if (!*list)
-		return (0);
-	while (argv[i + 1])
-	{
-		(*list)[i] = ft_strdup(argv[i + 1]);
-		if (!(*list)[i])
-			return (ft_free(*list), 0);
-		i++;
-	}
-	(*list)[i] = NULL;
-	return (1);
 }
 
 void	check_params(int argc, char **argv)

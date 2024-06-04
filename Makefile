@@ -1,11 +1,15 @@
 NAME_P = push_swap
 
 _SRCS_P = 	push_swap.c\
+			set_struct.c\
 			push_swap_errors.c\
+			check_args.c\
 			push_swap_errors_utils.c\
 			sort.c\
+			sort_bis.c\
 			sort_utils.c\
-			split.c
+			split.c\
+			utils.c
 _SRCS_I = 	swap_a.c\
 			swap_b.c\
 			ss.c\
