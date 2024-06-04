@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:24:29 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/31 20:11:38 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:39:50 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void			check_overflow(char *list, int i, int resu, char **ptr_list);
 int				*fill_int_table(int size, char **list);
 
 t_node			*create(int size, char **list);
-void			create_2(t_node *prev_ele, t_node **new_ele, char **list, int i);
+void			crea_2(t_node *prev_ele, t_node **new_ele, char **list, int i);
 void			set_final(t_node *head);
 void			set_group(t_node *head);
 void			set_group_2(t_node *head, t_node **temp, int *k);
@@ -49,10 +49,10 @@ void			allo_b(t_node *head);
 
 void			sort(t_node **a_head, t_node **b_head);
 void			sort_3(t_node **ptr, t_node ***a_head);
-void			sort_4(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr);
-void			sort_5(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr);
+void			s_4(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr);
+void			s_5(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr);
 void			sort_6(t_node **ptr, int *i);
-void			sort_1(t_node ***a_head, t_node ***b_head, int size, int nth_group);
+void			s_1(t_node ***a_head, t_node ***b_head, int size, int nth_gr);
 void			sort_2(int *current, t_node **ptr, t_node ****a_head);
 void			sort_back(t_node **a_head, t_node **b_head);
 void			sort_three(t_node *a_head);
@@ -78,10 +78,10 @@ void			swap_a_swap_b(t_node *a_head, t_node *b_head);
 void			swap(t_node *head);
 void			push_a(t_node **a_head, t_node **b_head);
 void			new_a_list(t_node **a_head, t_node **b_head);
-void			add_to_a_list(t_node **a_head, t_node **b_head, t_node **temp_ptr);
+void			add_to_a_list(t_node **a_head, t_node **b_head, t_node **ptr);
 void			push_b(t_node **a_head, t_node **b_head);
 void			new_b_list(t_node **a_head, t_node **b_head);
-void			add_to_b_list(t_node **a_head, t_node **b_head, t_node **temp_ptr);
+void			add_to_b_list(t_node **a_head, t_node **b_head, t_node **ptr);
 void			rotate_a(t_node *head);
 void			rotate_b(t_node *head);
 void			rotate_a_rotate_b(t_node *a_head, t_node *b_head);

@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/31 20:11:54 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:37:17 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ int	main(int argc, char **argv)
 	exit(EXIT_FAILURE);
 }
 
-void	create_list_2(t_node *prev_elem, t_node **new_elem, char **list, int i)
+void	crea_2(t_node *prev_ele, t_node **new_ele, char **list, int i)
 {
-	prev_elem = *new_elem;
-	*new_elem = (*new_elem)->next;
-	(*new_elem)->content = ft_atoi(list[i], NULL);
-	(*new_elem)->index = i + 1;
-	(*new_elem)->final = 1;
-	(*new_elem)->previous = prev_elem;
+	prev_ele = *new_ele;
+	*new_ele = (*new_ele)->next;
+	(*new_ele)->content = ft_atoi(list[i], NULL);
+	(*new_ele)->index = i + 1;
+	(*new_ele)->final = 1;
+	(*new_ele)->previous = prev_ele;
 }
 
 t_node	*create(int size, char **list)
@@ -72,7 +72,7 @@ t_node	*create(int size, char **list)
 		new_element->next = malloc(sizeof(t_node));
 		if (!new_element->next)
 			return (clean(head), NULL);
-		create_2(previous_element, &new_element, list, i);
+		crea_2(previous_element, &new_element, list, i);
 	}
 	new_element->next = head;
 	head->previous = new_element;

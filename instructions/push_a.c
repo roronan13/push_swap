@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:55:14 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 22:42:42 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:36:23 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,24 +57,24 @@ void	new_a_list(t_node **a_head, t_node **b_head)
 	(*a_head)->previous = *a_head;
 }
 
-void	add_to_a_list(t_node **a_head, t_node **b_head, t_node **temp_ptr)
+void	add_to_a_list(t_node **a_head, t_node **b_head, t_node **ptr)
 {
-	*temp_ptr = malloc(sizeof(t_node));
-	if (!*temp_ptr)
+	*ptr = malloc(sizeof(t_node));
+	if (!*ptr)
 	{
 		clean(*a_head);
 		clean(*b_head);
 		exit(EXIT_FAILURE);
 	}
-	(*a_head)->previous = *temp_ptr;
-	(*temp_ptr)->next = *a_head;
-	(*temp_ptr)->previous = ft_lst_last(*a_head);
-	(*temp_ptr)->content = (*b_head)->content;
-	(*temp_ptr)->final = (*b_head)->final;
-	(*temp_ptr)->group = (*b_head)->group;
-	(*temp_ptr)->index = 1;
-	(ft_lst_last(*a_head))->next = *temp_ptr;
-	while (*a_head != *temp_ptr)
+	(*a_head)->previous = *ptr;
+	(*ptr)->next = *a_head;
+	(*ptr)->previous = ft_lst_last(*a_head);
+	(*ptr)->content = (*b_head)->content;
+	(*ptr)->final = (*b_head)->final;
+	(*ptr)->group = (*b_head)->group;
+	(*ptr)->index = 1;
+	(ft_lst_last(*a_head))->next = *ptr;
+	while (*a_head != *ptr)
 	{
 		(*a_head)->index = (*a_head)->index + 1;
 		*a_head = (*a_head)->next;

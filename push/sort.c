@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/31 19:52:18 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:41:08 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	sort(t_node **a_head, t_node **b_head)
 	size = list_size(*a_head);
 	while (list_size(*a_head) > 3)
 	{
-		sort_1(&a_head, &b_head, size, nth_group);
+		s_1(&a_head, &b_head, size, nth_group);
 		nth_group = nth_group + 2;
 	}
 }
 
-void	sort_1(t_node ***a_head, t_node ***b_head, int size, int nth_group)
+void	s_1(t_node ***a_head, t_node ***b_head, int size, int nth_group)
 {
 	int		i;
 	t_node	*ptr;
@@ -43,9 +43,9 @@ void	sort_1(t_node ***a_head, t_node ***b_head, int size, int nth_group)
 			if ((**a_head)->final <= size - 3)
 			{
 				if ((**a_head)->group == nth_group)
-					sort_4(&i, a_head, b_head, &ptr);
+					s_4(&i, a_head, b_head, &ptr);
 				else if ((**a_head)->group == nth_group + 1)
-					sort_5(&i, a_head, b_head, &ptr);
+					s_5(&i, a_head, b_head, &ptr);
 			}
 			else
 				sort_6(&ptr, &i);
@@ -63,13 +63,13 @@ void	sort_3(t_node **ptr, t_node ***a_head)
 		reverse_rotate_a(**a_head);
 }
 
-void	sort_4(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr)
+void	s_4(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr)
 {
 	push_b((*i = -1, *a_head), *b_head);
 	*ptr = **a_head;
 }
 
-void	sort_5(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr)
+void	s_5(int *i, t_node ***a_head, t_node ***b_head, t_node **ptr)
 {
 	push_b((*i = -1, *a_head), *b_head);
 	rotate_b(**b_head);
