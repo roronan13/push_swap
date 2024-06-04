@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:28:25 by rpothier          #+#    #+#             */
-/*   Updated: 2024/05/30 23:09:07 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/06/04 17:19:52 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	is_sorted(t_node *head)
 {
 	t_node	*temp_1;
 	t_node	*temp_2;
-	int				first_content;
+	int		first_content;
 
 	first_content = head->content;
 	temp_1 = head->next;

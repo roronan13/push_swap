@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:50:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/06/04 16:51:06 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/06/04 17:20:42 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	check_errors_more_args(char ***list, char **argv, int *argc)
 	int	i;
 
 	i = 0;
-	*list = malloc(sizeof(char*) * *argc);
+	*list = malloc(sizeof(char *) * *argc);
 	if (!*list)
 		return (0);
 	while (argv[i + 1])

@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:43:21 by rpothier          #+#    #+#             */
-/*   Updated: 2024/06/04 17:13:00 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/06/04 17:19:14 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ void	s_1(t_node ***a_head, t_node ***b_head, int size, int nth_group)
 	int		i;
 	t_node	*ptr;
 	int		current;
-	
+
 	i = -1;
 	ptr = **a_head;
 	while ((++i <= list_size(**a_head)) && list_size(**a_head) > 3)
 	{
-		if ((ptr->group == nth_group || ptr->group == nth_group + 1) 
+		if ((ptr->group == nth_group || ptr->group == nth_group + 1)
 			&& ptr->final <= size - 3)
 		{
 			sort_2(&current, &ptr, &a_head);
@@ -97,7 +97,7 @@ void	sort_back(t_node **a_head, t_node **b_head)
 {
 	int		max;
 	t_node	*ptr;
-	
+
 	while (*b_head)
 	{
 		ptr = *b_head;

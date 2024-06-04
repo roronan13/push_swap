@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 17:03:15 by rpothier          #+#    #+#             */
-/*   Updated: 2024/06/04 17:00:21 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/06/04 17:18:35 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	*fill_int_table(int size, char **list)
 int	tab_size(char **tab)
 {
 	int	i;
-	
+
 	i = 0;
 	if (!tab || !*tab)
 		return (0);

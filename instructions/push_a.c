@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:55:14 by rpothier          #+#    #+#             */
-/*   Updated: 2024/06/04 16:36:23 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/06/04 17:17:26 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	push_a(t_node **a_head, t_node **b_head)
 {
 	t_node	*temp_ptr;
-	
+
 	if (!*b_head)
 		return ;
 	if (!*a_head)

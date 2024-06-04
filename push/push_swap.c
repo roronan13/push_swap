@@ -6,7 +6,7 @@
 /*   By: rpothier <rpothier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:38 by rpothier          #+#    #+#             */
-/*   Updated: 2024/06/04 16:48:10 by rpothier         ###   ########.fr       */
+/*   Updated: 2024/06/04 17:18:07 by rpothier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_node	*create(int size, char **list)
 	t_node	*head;
 	t_node	*new_element;
 	t_node	*previous_element;
-	int				i;
+	int		i;
 
 	i = 0;
 	previous_element = NULL;
